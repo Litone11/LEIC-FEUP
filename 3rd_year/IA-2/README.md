@@ -1,71 +1,60 @@
-# StockSmart - Previsao de Procura
+# StockSmart — Previsão de Procura com Machine Learning
 
-Aplicacao Streamlit para prever a procura de produtos de uma loja de roupa com base em dados historicos e num modelo de Machine Learning.
+> **Licenciatura em Engenharia Informática e Computação (LEIC @ FEUP)**  
+> **Unidade Curricular:** Inteligência Artificial (IA)  
+> **Autor(es):** Luís Martins e Grupo de IA
 
-## Requisitos
+---
 
-- Python 3.10 ou superior
-- `pip`
+## 📌 Sobre o Projeto
 
-## Instalar o projeto
+O **StockSmart** é uma aplicação web desenhada para estimar e prever a procura de produtos no setor de vestuário e retalho com base em dados históricos de vendas e modelos de **Machine Learning**.
 
-Na raiz do projeto, cria e ativa um ambiente virtual:
+O sistema treina modelos preditivos para antecipar a necessidade de stock, ajudando a evitar quebras de inventário ou acumulação excessiva de produtos.
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
+---
 
-Instala as dependencias:
+## 🛠️ Tecnologias Utilizadas
 
-```bash
-pip install -r requirements.txt
-```
+- **Linguagem:** Python (Python 3.10+)
+- **Framework Web:** Streamlit
+- **Machine Learning & Ciência de Dados:** Scikit-Learn, Pandas, NumPy
+- **Visualização de Dados:** Matplotlib, Seaborn
 
-## Gerar os dados
+---
 
-O projeto ja inclui `data/dados_loja.csv`. Para regenerar o dataset:
+## ✨ Funcionalidades Principais
 
-```bash
-python data/gerar_dados.py
-```
+- **Dashboard Interativo em Streamlit:** Interface web para previsão em tempo real com base nos parâmetros do utilizador.
+- **Pipeline de Treino de Modelos:** Scripts para geração de datasets sintéticos e treino de modelos de regressão/previsão.
+- **Avaliação de Desempenho:** Cálculo automático de métricas de erro ($MSE$, $MAE$, $R^2$) e geração de gráficos de avaliação.
 
-## Treinar o modelo
+---
 
-O projeto ja inclui `model/modelo.pkl`, `model/metricas.json` e `model/avaliacao_modelo.png`. Para treinar novamente:
+## 📁 Estrutura do Repositório
 
-```bash
-python model/treinar_modelo.py
-```
+- `app.py` / `main.py` — Aplicação web Streamlit.
+- `data/` — Datasets CSV (`dados_loja.csv`) e script gerador (`gerar_dados.py`).
+- `model/` — Scripts de treino (`treinar_modelo.py`), modelo treinado (`modelo.pkl`), métricas (`metricas.json`) e gráficos.
 
-Este comando atualiza:
+---
 
-- `model/modelo.pkl`
-- `model/metricas.json`
-- `model/avaliacao_modelo.png`
+## 🚀 Como Executar
 
-## Executar a aplicacao
-
-```bash
-streamlit run app/app.py
-```
-
-Depois abre o endereco indicado no terminal, normalmente:
-
-```text
-http://localhost:8501
-```
-
-## Fluxo recomendado
-
-Para correr tudo do zero:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python data/gerar_dados.py
-python model/treinar_modelo.py
-streamlit run app/app.py
-```
-
+1. Criar e ativar um ambiente virtual Python:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+2. Instalar as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Treinar o modelo de Machine Learning (opcional):
+   ```bash
+   python model/treinar_modelo.py
+   ```
+4. Iniciar a aplicação web Streamlit:
+   ```bash
+   streamlit run app.py
+   ```

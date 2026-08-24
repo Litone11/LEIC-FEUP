@@ -1,43 +1,63 @@
-# Compiler Project
+# Compilador de Sub-Java para Jasmin Bytecode
 
-For the last delivery (CP3), complete the following sections.
+> **Licenciatura em Engenharia Informática e Computação (LEIC @ FEUP)**  
+> **Unidade Curricular:** Compiladores (COMP)  
+> **Autor(es):** Luís Martins, Guilherme Oliveira, Rafael Cunha, Maria Leonor Beirão
 
-## Participation
+---
 
-The sum of the participations should be 100%, for a group of four elements with balanced participation, this corresponds to 25% participation each.
+## 📌 Sobre o Projeto
 
-Guilherme Oliveira - 25% 
-Luis Martins - 25% 
-Rafael Cunha - 25% 
-Maria Leonor Beirão - 25% 
+Este projeto consistiu no desenvolvimento de um compilador completo para uma linguagem de programação orientada a objetos (subconjunto de Java / Java--).
 
-## Declaration of AI Tools Used
+O compilador efetua todo o pipeline tradicional de compilação: desde a análise léxica e sintática até à verificação semântica, construção da Árvore de Sintaxe Abstrata (AST), otimização de código e geração final de código executável em **Jasmin Bytecode** direcionado à máquina virtual Java (JVM).
 
-Please choose one of the two options  about AI tools use. In case tools where used, enumerate which ones, and the specific use.
+---
 
-Finally, check the box regarding responsibility for the work.
+## 🛠️ Tecnologias e Ferramentas
 
-AI tools/services used in this work:
+- **Linguagem do Compilador:** Java (Java 17)
+- **Gerador de Parsers:** ANTLR4
+- **Target / Assembler:** Jasmin (Java Bytecode Assembler)
+- **Build System:** Gradle
 
-[] No AI tools were used.
-[x] The following tools were used:
- - [Gemini]: Code improvement recommendations, error analysis, and guidance on how to handle some of the more complex sections of the project.
- - [Name]: [specific use]
+---
 
-[x] All content has been reviewed, understood, validated, and we assume full responsibility for the work in this repository.
+## ⚙️ Fases do Compilador
 
+1. **Análise Léxica e Sintática (CP1):**
+   - Reconhecimento de tokens e gramática utilizando ANTLR4.
+   - Tratamento de erros sintáticos e construção de regras gramaticais.
+2. **Análise Semântica e AST (CP2):**
+   - Construção da Árvore de Sintaxe Abstrata (*Abstract Syntax Tree*).
+   - Tabela de Símbolos (*Symbol Table*) para variáveis, métodos e classes.
+   - Verificação de tipos (*Type Checking*), verificação de âmbito (*Scope*) e compatibilidade de operandos.
+3. **Geração de Código Bytecode (CP3):**
+   - Tradução da representação intermédia para instruções de stack-machine em Jasmin bytecode.
+   - Gestão de registos locais e otimização de instruções de salto e operações aritméticas.
 
-# Repository Structure
+---
 
-The base repository has several folders, the main ones are:
+## 📁 Estrutura do Repositório
 
-- `src`: The source folder for the project, you will work here.
-- `test`: Folder for your own tests.
-- `test-public`: Public tests, similar to the majority of the private tests that will be used for evaluation. **Do not change the contents of this folder.** This folder will be modified by automatic updates during the semester.
+- `src/` — Código fonte do compilador (Gramáticas ANTLR, Visitadores de AST, Gerador de Jasmin).
+- `test/` — Suíte de testes unitários e de integração desenvolvidos pela equipa.
+- `test-public/` — Casos de teste públicos de validação.
 
+---
 
-The remaining folders are:
+## 🚀 Como Executar
 
-- `libs`: Libraries in JAR format, required for the project.
-- `libs-jmm`: Java code that can be imported in your Java-- classes. Contains a `java` folder, with the source code, and a `compiled` folder with the same classes, in compiled format. The build system automatically compiles the files inside the `java` folder and stores them in the `compiled` folder.
-
+1. Compilar o projeto com o Gradle:
+   ```bash
+   ./gradlew build
+   ```
+2. Executar o compilador sobre um ficheiro fonte `.jmm`:
+   ```bash
+   java -jar build/libs/comp.jar exemplo.jmm -o exemplo.j
+   ```
+3. Assemble do código Jasmin para um ficheiro `.class` executável:
+   ```bash
+   java -jar libs/jasmin.jar exemplo.j
+   java exemplo
+   ```

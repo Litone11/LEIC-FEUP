@@ -1,26 +1,56 @@
+# Conversor SVG para PNG em C++
 
-# Programming project
+> **Licenciatura em Engenharia Informática e Computação (LEIC @ FEUP)**  
+> **Unidade Curricular:** Programação I (PROG)  
+> **Autor(es):** Luís Martins, Henrique Gonçalves, Santiago Ferreira
 
-## Group elements
+---
 
-Identify all group elements (numbers and names).
+## 📌 Sobre o Projeto
 
-- up202307344 Henrique Gonçalves
-- up202304025 Luis Martins
-- up202304904 Santiago Ferreira
+Este projeto foi desenvolvido no âmbito da unidade curricular de Programação I. O objetivo consistiu na criação de um leitor e conversor de ficheiros de imagem vetorial no formato **SVG (Scalable Vector Graphics)** para imagens matriciais no formato **PNG (Portable Network Graphics)** em C++.
 
+O programa faz o parsing das especificações XML do SVG, extrai elementos geométricos, aplica transformações afins complexas e renderiza o resultado final pixel a pixel.
 
-## Accomplished tasks
+---
 
-SVG-to-PNG Conversion Project
+## 🛠️ Tecnologias e Ferramentas
 
-In the project, we've implemented SVG reading logic to extract image dimensions and SVG elements. We've defined C++ classes for SVG geometric elements like <ellipse>, <circle>, etc., ensuring they can be rendered into PNG format.
+- **Linguagem:** C++ (C++17)
+- **Bibliotecas:** PNG Rendering Library (libpng / RGB image buffer)
+- **Conceitos:** Programação Orientada a Objetos (POO), Árvores de Elementos, Transformações Matriciais 2D, Gestão Dinâmica de Memória.
 
-Implementing transformations specified in SVG elements, like translate, rotate, and scale, was a significant aspect of the project. Getting these transformations right was key to ensuring that the rendered PNG images looked just like their SVG counterparts.
+---
 
-We took care of groups (<g>) and duplication (<use>) to ensure everything looks just as it should in SVG. So, when there are groups, everything inside sticks together, and when you duplicate elements, they show up in the right places, just like in the original SVG. All set for accurate rendering and copying!
+## ✨ Funcionalidades Principais
 
-We've provided suggestions for efficient coordinate transformations and memory management throughout the project.
+- **Leitura de Primitivas Geométricas:**
+  - Suporte a retângulos, círculos, elipses, linhas e polígonos.
+  - Extração de propriedades de cor de preenchimento (*fill*) e contorno (*stroke*).
+- **Transformações Afins 2D:**
+  - Aplicação de transformações de translação (`translate`), rotação (`rotate`) e escala (`scale`).
+  - Cálculo matricial de coordenadas de pixéis para renderização exata.
+- **Estruturação de Grupos e Reutilização:**
+  - Suporte a grupos de elementos `<g>` mantendo hierarquias e transformações combinadas.
+  - Reutilização de elementos com a tag `<use>`.
 
-To use the program, compile it using a C++ compiler and provide the SVG file as input. The program will generate the corresponding PNG image.
+---
 
+## 📁 Estrutura do Repositório
+
+- `src/` — Implementação das classes de elementos SVG, matrizes de transformação e renderizador PNG.
+- `include/` — Ficheiros de cabeçalho (`.hpp`).
+- `test/` / `samples/` — Ficheiros de teste em formato SVG e saídas esperadas em PNG.
+
+---
+
+## 🚀 Como Executar
+
+1. Compilar o projeto com um compilador C++17:
+   ```bash
+   g++ -std=c++17 src/*.cpp -o svg2png
+   ```
+2. Executar passando o ficheiro SVG como argumento:
+   ```bash
+   ./svg2png exemplo.svg imagem_saida.png
+   ```
