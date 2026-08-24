@@ -1,0 +1,209 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/untitled5/route.cpp File Reference}
+\hypertarget{route_8cpp}{}\label{route_8cpp}\index{/Users/luismartins/CLionProjects/untitled5/route.cpp@{/Users/luismartins/CLionProjects/untitled5/route.cpp}}
+{\ttfamily \#include "{}route.\+h"{}}\newline
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{route_8cpp_ae37dade86abba5797389cba1125c268b}{dijkstra\+Shortest\+Path}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const string \&source, const string \&dest)
+\begin{DoxyCompactList}\small\item\em Computes the shortest path using Dijkstra\textquotesingle{}s algorithm. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{route_8cpp_abced3b4249e365a2a13b257024740052}{find\+Alternative\+Route}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const string \&source, const string \&dest, const vector$<$ string $>$ \&main\+Path)
+\begin{DoxyCompactList}\small\item\em Finds an alternative route that avoids the main path. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{route_8cpp_a624a3858c9a9507d50fcda45e23eb613}{calculate\+Driving\+Time}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const vector$<$ string $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Calculates the total driving time for a given path. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{route_8cpp_a301e0508168bf954fa69a69a36aa235b}{calculate\+Walking\+Time}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const vector$<$ string $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Calculates the total walking time for a given path. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \mbox{\hyperlink{route_8cpp_a36e0030b3ac6a061d401e4d99ea0f081}{dijkstra\+Restricted}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const string \&source, const string \&dest, const set$<$ string $>$ \&avoid\+Nodes, const set$<$ pair$<$ string, string $>$ $>$ \&avoid\+Segments)
+\begin{DoxyCompactList}\small\item\em Computes a restricted route avoiding specified nodes and segments. \end{DoxyCompactList}\item 
+tuple$<$ vector$<$ string $>$, string, vector$<$ string $>$ $>$ \mbox{\hyperlink{route_8cpp_ac41454ac8142ae24cb842520ee811523}{find\+Eco\+Route}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const string \&source, const string \&dest, int max\+Walk\+Time, const set$<$ string $>$ \&avoid\+Nodes, const set$<$ pair$<$ string, string $>$ $>$ \&avoid\+Segments, string \&message)
+\begin{DoxyCompactList}\small\item\em Finds an eco-\/friendly route that minimizes driving and walking time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \mbox{\hyperlink{route_8cpp_a0c8064fe36748c645a94c0044c15e467}{locations}}
+\begin{DoxyCompactList}\small\item\em Stores the locations loaded from the CSV file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{route_8cpp_a624a3858c9a9507d50fcda45e23eb613}\index{route.cpp@{route.cpp}!calculateDrivingTime@{calculateDrivingTime}}
+\index{calculateDrivingTime@{calculateDrivingTime}!route.cpp@{route.cpp}}
+\doxysubsubsection{\texorpdfstring{calculateDrivingTime()}{calculateDrivingTime()}}
+{\footnotesize\ttfamily \label{route_8cpp_a624a3858c9a9507d50fcda45e23eb613} 
+int calculate\+Driving\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const vector$<$ string $>$ \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the total driving time for a given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em path} & A vector of strings representing the path for which driving time is to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total driving time in minutes, or -\/1 if any segment of the path is invalid.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of segments in the path, as each segment is checked once. 
+\end{DoxyNote}
+\Hypertarget{route_8cpp_a301e0508168bf954fa69a69a36aa235b}\index{route.cpp@{route.cpp}!calculateWalkingTime@{calculateWalkingTime}}
+\index{calculateWalkingTime@{calculateWalkingTime}!route.cpp@{route.cpp}}
+\doxysubsubsection{\texorpdfstring{calculateWalkingTime()}{calculateWalkingTime()}}
+{\footnotesize\ttfamily \label{route_8cpp_a301e0508168bf954fa69a69a36aa235b} 
+int calculate\+Walking\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const vector$<$ string $>$ \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the total walking time for a given path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em path} & A vector of strings representing the path for which walking time is to be calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total walking time in minutes, or -\/1 if any segment of the path is invalid.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of segments in the path, as each segment is checked once. 
+\end{DoxyNote}
+\Hypertarget{route_8cpp_a36e0030b3ac6a061d401e4d99ea0f081}\index{route.cpp@{route.cpp}!dijkstraRestricted@{dijkstraRestricted}}
+\index{dijkstraRestricted@{dijkstraRestricted}!route.cpp@{route.cpp}}
+\doxysubsubsection{\texorpdfstring{dijkstraRestricted()}{dijkstraRestricted()}}
+{\footnotesize\ttfamily \label{route_8cpp_a36e0030b3ac6a061d401e4d99ea0f081} 
+vector$<$ string $>$ dijkstra\+Restricted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const string \&}]{source}{, }\item[{const string \&}]{dest}{, }\item[{const set$<$ string $>$ \&}]{avoid\+Nodes}{, }\item[{const set$<$ pair$<$ string, string $>$ $>$ \&}]{avoid\+Segments}{}\end{DoxyParamCaption})}
+
+
+
+Computes a restricted route avoiding specified nodes and segments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em source} & The starting location for the path. \\
+\hline
+{\em dest} & The destination location for the path. \\
+\hline
+{\em avoid\+Nodes} & A set of nodes to avoid in the route. \\
+\hline
+{\em avoid\+Segments} & A set of segments to avoid in the route. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the restricted route, or an empty vector if no route exists.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O((E + V) \texorpdfstring{$\ast$}{*} log V), where E is the number of edges and V is the number of vertices. This complexity arises due to the priority queue and the node/segment avoidance checks. 
+\end{DoxyNote}
+\Hypertarget{route_8cpp_ae37dade86abba5797389cba1125c268b}\index{route.cpp@{route.cpp}!dijkstraShortestPath@{dijkstraShortestPath}}
+\index{dijkstraShortestPath@{dijkstraShortestPath}!route.cpp@{route.cpp}}
+\doxysubsubsection{\texorpdfstring{dijkstraShortestPath()}{dijkstraShortestPath()}}
+{\footnotesize\ttfamily \label{route_8cpp_ae37dade86abba5797389cba1125c268b} 
+vector$<$ string $>$ dijkstra\+Shortest\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const string \&}]{source}{, }\item[{const string \&}]{dest}{}\end{DoxyParamCaption})}
+
+
+
+Computes the shortest path using Dijkstra\textquotesingle{}s algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em source} & The starting location for the path. \\
+\hline
+{\em dest} & The destination location for the path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the locations in the shortest path, or an empty vector if no path exists.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O((E + V) \texorpdfstring{$\ast$}{*} log V), where E is the number of edges and V is the number of vertices. This complexity arises from the priority queue used in Dijkstra\textquotesingle{}s algorithm. 
+\end{DoxyNote}
+\Hypertarget{route_8cpp_abced3b4249e365a2a13b257024740052}\index{route.cpp@{route.cpp}!findAlternativeRoute@{findAlternativeRoute}}
+\index{findAlternativeRoute@{findAlternativeRoute}!route.cpp@{route.cpp}}
+\doxysubsubsection{\texorpdfstring{findAlternativeRoute()}{findAlternativeRoute()}}
+{\footnotesize\ttfamily \label{route_8cpp_abced3b4249e365a2a13b257024740052} 
+vector$<$ string $>$ find\+Alternative\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const string \&}]{source}{, }\item[{const string \&}]{dest}{, }\item[{const vector$<$ string $>$ \&}]{main\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Finds an alternative route that avoids the main path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em source} & The starting location for the path. \\
+\hline
+{\em dest} & The destination location for the path. \\
+\hline
+{\em main\+Path} & The main path to avoid. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of strings representing the alternative route, or an empty vector if no route exists.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O((E + V) \texorpdfstring{$\ast$}{*} log V), where E is the number of edges and V is the number of vertices. This is because the algorithm uses a modified Dijkstra\textquotesingle{}s approach. 
+\end{DoxyNote}
+\Hypertarget{route_8cpp_ac41454ac8142ae24cb842520ee811523}\index{route.cpp@{route.cpp}!findEcoRoute@{findEcoRoute}}
+\index{findEcoRoute@{findEcoRoute}!route.cpp@{route.cpp}}
+\doxysubsubsection{\texorpdfstring{findEcoRoute()}{findEcoRoute()}}
+{\footnotesize\ttfamily \label{route_8cpp_ac41454ac8142ae24cb842520ee811523} 
+tuple$<$ vector$<$ string $>$, string, vector$<$ string $>$ $>$ find\+Eco\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const string \&}]{source}{, }\item[{const string \&}]{dest}{, }\item[{int}]{max\+Walk\+Time}{, }\item[{const set$<$ string $>$ \&}]{avoid\+Nodes}{, }\item[{const set$<$ pair$<$ string, string $>$ $>$ \&}]{avoid\+Segments}{, }\item[{string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Finds an eco-\/friendly route that minimizes driving and walking time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em source} & The starting location for the route. \\
+\hline
+{\em dest} & The destination location for the route. \\
+\hline
+{\em max\+Walk\+Time} & The maximum allowable walking time. \\
+\hline
+{\em avoid\+Nodes} & A set of nodes to avoid in the route. \\
+\hline
+{\em avoid\+Segments} & A set of segments to avoid in the route. \\
+\hline
+{\em message} & A reference to a string for outputting messages about the route findings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing the driving path, the best parking location, and the walking path.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O((E + V) \texorpdfstring{$\ast$}{*} log V + P \texorpdfstring{$\ast$}{*} (E + V)), where E is the number of edges, V is the number of vertices, and P is the number of parking candidates. The complexity comes from running Dijkstra\textquotesingle{}s algorithm multiple times for each parking candidate. 
+\end{DoxyNote}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{route_8cpp_a0c8064fe36748c645a94c0044c15e467}\index{route.cpp@{route.cpp}!locations@{locations}}
+\index{locations@{locations}!route.cpp@{route.cpp}}
+\doxysubsubsection{\texorpdfstring{locations}{locations}}
+{\footnotesize\ttfamily \label{route_8cpp_a0c8064fe36748c645a94c0044c15e467} 
+vector$<$\mbox{\hyperlink{struct_location}{Location}}$>$ locations\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Stores the locations loaded from the CSV file. 
+
+Processes a batch file containing various routing operations.
+
+Each location represents a node in the graph. 

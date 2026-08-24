@@ -1,0 +1,41 @@
+\doxysection{mouse.\+h}
+\hypertarget{mouse_8h_source}{}\label{mouse_8h_source}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/mouse.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/mouse.h}}
+\mbox{\hyperlink{mouse_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ \_MOUSE\_}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ \_MOUSE\_}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <minix/sysutil.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i8042_8h}{i8042.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ int\ (mouse\_config)(uint8\_t\ controlWord);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00040\ int\ (KBCWrite)(uint8\_t\ port,\ uint8\_t\ controlWord);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00049\ int\ (KBCRead)(uint8\_t\ port,\ uint32\_t\ *output);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ int\ (mouse\_subscribe\_int)(uint8\_t\ *bit\_no);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ void\ (mouse\_ih)();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ int\ (mouse\_unsubscribe)();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00079\ int\ (mouse\_sync\_bytes)();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ int\ (mouse\_bytes\_to\_packet)();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mouse_8h_a3dc118b68fd6b09e1a673f7e273e0dab}{updateMouseLocation}}();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mouse_8h_a0bdbb043674cbfdc4452f7ada8e72d43}{processLeftClick}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_MOUSE\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

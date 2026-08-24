@@ -1,0 +1,202 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/devices/mouse.h File Reference}
+\hypertarget{mouse_8h}{}\label{mouse_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/mouse.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/mouse.h}}
+
+
+Mouse driver interface for handling mouse interrupts and data packets.  
+
+
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
+{\ttfamily \#include "{}i8042.\+h"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mouse_8h_a7f60f033c75a09426fd50fe83c6d016f}{mouse\+\_\+config}} (uint8\+\_\+t control\+Word)
+\begin{DoxyCompactList}\small\item\em Sends a command to the mouse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse_8h_a4202be8c6f6a952b5c68ca842f25c301}{KBCWrite}} (uint8\+\_\+t port, uint8\+\_\+t control\+Word)
+\begin{DoxyCompactList}\small\item\em Writes a byte to the KBC command or argument port. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse_8h_a271785a9e78a6dc8151a2630a674f27b}{KBCRead}} (uint8\+\_\+t port, uint32\+\_\+t \texorpdfstring{$\ast$}{*}output)
+\begin{DoxyCompactList}\small\item\em Reads a byte from the KBC output buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse_8h_a9da18257ff113b686bb826d154bfaa87}{mouse\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes mouse interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mouse_8h_a834b6d7efe311484d6da234db333cb97}{mouse\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Mouse interrupt handler. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse_8h_abb62339e13d96f9050f69a71428f8eb9}{mouse\+\_\+unsubscribe}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes mouse interrupts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse_8h_a4479021eb432a73a98ae76b12b00ecf1}{mouse\+\_\+sync\+\_\+bytes}} ()
+\begin{DoxyCompactList}\small\item\em Synchronizes mouse packet bytes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mouse_8h_a78ae0ec37d573081ed4e460306e44b07}{mouse\+\_\+bytes\+\_\+to\+\_\+packet}} ()
+\begin{DoxyCompactList}\small\item\em Parses the 3-\/byte mouse packet into a structured format. \end{DoxyCompactList}\item 
+\Hypertarget{mouse_8h_a3dc118b68fd6b09e1a673f7e273e0dab}\label{mouse_8h_a3dc118b68fd6b09e1a673f7e273e0dab} 
+void {\bfseries update\+Mouse\+Location} ()
+\begin{DoxyCompactList}\small\item\em Updates global cursor position using the mouse packet data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mouse_8h_a0bdbb043674cbfdc4452f7ada8e72d43}{process\+Left\+Click}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the left mouse button is currently pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{mouse_8h_a6150e0515f7202e2fb518f7206ed97dc}\label{mouse_8h_a6150e0515f7202e2fb518f7206ed97dc} 
+int {\bfseries x}
+\item 
+\Hypertarget{mouse_8h_a0a2f84ed7838f07779ae24c5a9086d33}\label{mouse_8h_a0a2f84ed7838f07779ae24c5a9086d33} 
+int {\bfseries y}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mouse driver interface for handling mouse interrupts and data packets. 
+
+Provides function declarations for configuring the mouse, reading/writing through the KBC, subscribing to mouse interrupts, interpreting packets, and updating cursor position.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mouse_8h_a271785a9e78a6dc8151a2630a674f27b}\index{mouse.h@{mouse.h}!KBCRead@{KBCRead}}
+\index{KBCRead@{KBCRead}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{KBCRead()}{KBCRead()}}
+{\footnotesize\ttfamily \label{mouse_8h_a271785a9e78a6dc8151a2630a674f27b} 
+int KBCRead (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{output}{}\end{DoxyParamCaption})}
+
+
+
+Reads a byte from the KBC output buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to read from. \\
+\hline
+{\em output} & Pointer to store the byte read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{mouse_8h_a4202be8c6f6a952b5c68ca842f25c301}\index{mouse.h@{mouse.h}!KBCWrite@{KBCWrite}}
+\index{KBCWrite@{KBCWrite}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{KBCWrite()}{KBCWrite()}}
+{\footnotesize\ttfamily \label{mouse_8h_a4202be8c6f6a952b5c68ca842f25c301} 
+int KBCWrite (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint8\+\_\+t}]{control\+Word}{}\end{DoxyParamCaption})}
+
+
+
+Writes a byte to the KBC command or argument port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to write to. \\
+\hline
+{\em control\+Word} & The byte to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{mouse_8h_a78ae0ec37d573081ed4e460306e44b07}\index{mouse.h@{mouse.h}!mouse\_bytes\_to\_packet@{mouse\_bytes\_to\_packet}}
+\index{mouse\_bytes\_to\_packet@{mouse\_bytes\_to\_packet}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_bytes\_to\_packet()}{mouse\_bytes\_to\_packet()}}
+{\footnotesize\ttfamily \label{mouse_8h_a78ae0ec37d573081ed4e460306e44b07} 
+int mouse\+\_\+bytes\+\_\+to\+\_\+packet (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Parses the 3-\/byte mouse packet into a structured format. 
+
+Interprets button states and movement deltas. \begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+\Hypertarget{mouse_8h_a7f60f033c75a09426fd50fe83c6d016f}\index{mouse.h@{mouse.h}!mouse\_config@{mouse\_config}}
+\index{mouse\_config@{mouse\_config}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_config()}{mouse\_config()}}
+{\footnotesize\ttfamily \label{mouse_8h_a7f60f033c75a09426fd50fe83c6d016f} 
+int mouse\+\_\+config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{control\+Word}{}\end{DoxyParamCaption})}
+
+
+
+Sends a command to the mouse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em control\+Word} & The command byte to be sent to the mouse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{mouse_8h_a834b6d7efe311484d6da234db333cb97}\index{mouse.h@{mouse.h}!mouse\_ih@{mouse\_ih}}
+\index{mouse\_ih@{mouse\_ih}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_ih()}{mouse\_ih()}}
+{\footnotesize\ttfamily \label{mouse_8h_a834b6d7efe311484d6da234db333cb97} 
+void mouse\+\_\+ih (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Mouse interrupt handler. 
+
+Reads a byte from the KBC related to mouse activity. \Hypertarget{mouse_8h_a9da18257ff113b686bb826d154bfaa87}\index{mouse.h@{mouse.h}!mouse\_subscribe\_int@{mouse\_subscribe\_int}}
+\index{mouse\_subscribe\_int@{mouse\_subscribe\_int}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_subscribe\_int()}{mouse\_subscribe\_int()}}
+{\footnotesize\ttfamily \label{mouse_8h_a9da18257ff113b686bb826d154bfaa87} 
+int mouse\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no}{}\end{DoxyParamCaption})}
+
+
+
+Subscribes mouse interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Pointer to store the bit mask for the mouse IRQ. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{mouse_8h_a4479021eb432a73a98ae76b12b00ecf1}\index{mouse.h@{mouse.h}!mouse\_sync\_bytes@{mouse\_sync\_bytes}}
+\index{mouse\_sync\_bytes@{mouse\_sync\_bytes}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_sync\_bytes()}{mouse\_sync\_bytes()}}
+{\footnotesize\ttfamily \label{mouse_8h_a4479021eb432a73a98ae76b12b00ecf1} 
+int mouse\+\_\+sync\+\_\+bytes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Synchronizes mouse packet bytes. 
+
+Fills the mouse packet buffer with the 3 bytes received from the mouse. \begin{DoxyReturn}{Returns}
+0 when synchronization proceeds. 
+\end{DoxyReturn}
+\Hypertarget{mouse_8h_abb62339e13d96f9050f69a71428f8eb9}\index{mouse.h@{mouse.h}!mouse\_unsubscribe@{mouse\_unsubscribe}}
+\index{mouse\_unsubscribe@{mouse\_unsubscribe}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_unsubscribe()}{mouse\_unsubscribe()}}
+{\footnotesize\ttfamily \label{mouse_8h_abb62339e13d96f9050f69a71428f8eb9} 
+int mouse\+\_\+unsubscribe (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unsubscribes mouse interrupts. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{mouse_8h_a0bdbb043674cbfdc4452f7ada8e72d43}\index{mouse.h@{mouse.h}!processLeftClick@{processLeftClick}}
+\index{processLeftClick@{processLeftClick}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{processLeftClick()}{processLeftClick()}}
+{\footnotesize\ttfamily \label{mouse_8h_a0bdbb043674cbfdc4452f7ada8e72d43} 
+bool process\+Left\+Click (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the left mouse button is currently pressed. 
+
+\begin{DoxyReturn}{Returns}
+true if pressed, false otherwise. 
+\end{DoxyReturn}

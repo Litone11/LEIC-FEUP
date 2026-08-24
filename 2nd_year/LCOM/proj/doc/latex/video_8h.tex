@@ -1,0 +1,190 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/devices/video.h File Reference}
+\hypertarget{video_8h}{}\label{video_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/video.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/video.h}}
+
+
+Video graphics interface using VBE and double buffering.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{video_8h_a0ae6ba7b4415ade6a96213abc0550e0e}{change\+\_\+graph\+\_\+mode}} (uint16\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Changes the graphics mode using VBE. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{video_8h_a4652d078e1def9e26574a08662a1ef23}{map\+\_\+memory}} (uint16\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Maps video memory and initializes double buffering. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{video_8h_a6f895de9725f9f231f9a7f74b6087f60}{vg\+\_\+draw\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a single pixel to the back buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{video_8h_adb08b276272848bc7f3bccc0f5e770c8}{vg\+\_\+draw\+\_\+hline}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t len, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a horizontal line on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{video_8h_a4d53728322f948683b768482bf4906e8}{vg\+\_\+draw\+\_\+rectangle}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Draws a filled rectangle on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{video_8h_af9979d37c4242c6c107dfdaa4dd89c8f}{vg\+\_\+draw\+\_\+xpm}} (xpm\+\_\+map\+\_\+t xpm, uint16\+\_\+t x, uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Draws an \doxylink{struct_x_p_m}{XPM} image on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{video_8h_a67bac4464dd2538c523b53d656c8642d}{buf\+\_\+swap}} ()
+\begin{DoxyCompactList}\small\item\em Swaps the back buffer to the video memory (double buffering). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Video graphics interface using VBE and double buffering. 
+
+Declares functions for setting video mode, mapping memory, drawing pixels, lines, rectangles, \doxylink{struct_x_p_m}{XPM} images, and swapping buffers.
+
+Uses VBE mode information and double buffer to render graphics in Minix.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{video_8h_a67bac4464dd2538c523b53d656c8642d}\index{video.h@{video.h}!buf\_swap@{buf\_swap}}
+\index{buf\_swap@{buf\_swap}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{buf\_swap()}{buf\_swap()}}
+{\footnotesize\ttfamily \label{video_8h_a67bac4464dd2538c523b53d656c8642d} 
+int buf\+\_\+swap (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Swaps the back buffer to the video memory (double buffering). 
+
+\begin{DoxyReturn}{Returns}
+0 on success. 
+\end{DoxyReturn}
+\Hypertarget{video_8h_a0ae6ba7b4415ade6a96213abc0550e0e}\index{video.h@{video.h}!change\_graph\_mode@{change\_graph\_mode}}
+\index{change\_graph\_mode@{change\_graph\_mode}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{change\_graph\_mode()}{change\_graph\_mode()}}
+{\footnotesize\ttfamily \label{video_8h_a0ae6ba7b4415ade6a96213abc0550e0e} 
+int change\+\_\+graph\+\_\+mode (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Changes the graphics mode using VBE. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The VBE mode to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{video_8h_a4652d078e1def9e26574a08662a1ef23}\index{video.h@{video.h}!map\_memory@{map\_memory}}
+\index{map\_memory@{map\_memory}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{map\_memory()}{map\_memory()}}
+{\footnotesize\ttfamily \label{video_8h_a4652d078e1def9e26574a08662a1ef23} 
+int map\+\_\+memory (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Maps video memory and initializes double buffering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The VBE mode used to calculate memory size. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{video_8h_adb08b276272848bc7f3bccc0f5e770c8}\index{video.h@{video.h}!vg\_draw\_hline@{vg\_draw\_hline}}
+\index{vg\_draw\_hline@{vg\_draw\_hline}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{vg\_draw\_hline()}{vg\_draw\_hline()}}
+{\footnotesize\ttfamily \label{video_8h_adb08b276272848bc7f3bccc0f5e770c8} 
+int vg\+\_\+draw\+\_\+hline (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x}{, }\item[{uint16\+\_\+t}]{y}{, }\item[{uint16\+\_\+t}]{len}{, }\item[{uint32\+\_\+t}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws a horizontal line on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Starting x-\/coordinate. \\
+\hline
+{\em y} & Y-\/coordinate. \\
+\hline
+{\em len} & Length of the line in pixels. \\
+\hline
+{\em color} & Color to draw. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on error. 
+\end{DoxyReturn}
+\Hypertarget{video_8h_a6f895de9725f9f231f9a7f74b6087f60}\index{video.h@{video.h}!vg\_draw\_pixel@{vg\_draw\_pixel}}
+\index{vg\_draw\_pixel@{vg\_draw\_pixel}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{vg\_draw\_pixel()}{vg\_draw\_pixel()}}
+{\footnotesize\ttfamily \label{video_8h_a6f895de9725f9f231f9a7f74b6087f60} 
+int vg\+\_\+draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x}{, }\item[{uint16\+\_\+t}]{y}{, }\item[{uint32\+\_\+t}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws a single pixel to the back buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Horizontal coordinate. \\
+\hline
+{\em y} & Vertical coordinate. \\
+\hline
+{\em color} & Color value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 if out of bounds. 
+\end{DoxyReturn}
+\Hypertarget{video_8h_a4d53728322f948683b768482bf4906e8}\index{video.h@{video.h}!vg\_draw\_rectangle@{vg\_draw\_rectangle}}
+\index{vg\_draw\_rectangle@{vg\_draw\_rectangle}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{vg\_draw\_rectangle()}{vg\_draw\_rectangle()}}
+{\footnotesize\ttfamily \label{video_8h_a4d53728322f948683b768482bf4906e8} 
+int vg\+\_\+draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x}{, }\item[{uint16\+\_\+t}]{y}{, }\item[{uint16\+\_\+t}]{width}{, }\item[{uint16\+\_\+t}]{height}{, }\item[{uint32\+\_\+t}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws a filled rectangle on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Top-\/left x-\/coordinate. \\
+\hline
+{\em y} & Top-\/left y-\/coordinate. \\
+\hline
+{\em width} & Width of the rectangle. \\
+\hline
+{\em height} & Height of the rectangle. \\
+\hline
+{\em color} & Fill color. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on error. 
+\end{DoxyReturn}
+\Hypertarget{video_8h_af9979d37c4242c6c107dfdaa4dd89c8f}\index{video.h@{video.h}!vg\_draw\_xpm@{vg\_draw\_xpm}}
+\index{vg\_draw\_xpm@{vg\_draw\_xpm}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{vg\_draw\_xpm()}{vg\_draw\_xpm()}}
+{\footnotesize\ttfamily \label{video_8h_af9979d37c4242c6c107dfdaa4dd89c8f} 
+int vg\+\_\+draw\+\_\+xpm (\begin{DoxyParamCaption}\item[{xpm\+\_\+map\+\_\+t}]{xpm}{, }\item[{uint16\+\_\+t}]{x}{, }\item[{uint16\+\_\+t}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Draws an \doxylink{struct_x_p_m}{XPM} image on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & The \doxylink{struct_x_p_m}{XPM} map to draw. \\
+\hline
+{\em x} & Top-\/left x-\/coordinate. \\
+\hline
+{\em y} & Top-\/left y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}

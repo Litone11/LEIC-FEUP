@@ -1,0 +1,152 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/untitled5/parser.cpp File Reference}
+\hypertarget{parser_8cpp}{}\label{parser_8cpp}\index{/Users/luismartins/CLionProjects/untitled5/parser.cpp@{/Users/luismartins/CLionProjects/untitled5/parser.cpp}}
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \mbox{\hyperlink{parser_8cpp_a7145ffaf1f00013bb353ca6ffad69b66}{parse\+Locations}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Parses a CSV file containing location data. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ \mbox{\hyperlink{parser_8cpp_aca545d8b008e77f3a78d78c0020e98f5}{parse\+Distances}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Parses a CSV file containing distance data. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{parser_8cpp_a92ce917ad9126e93a2c9f2c4565b6160}{get\+Code\+By\+Id}} (const vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \&\mbox{\hyperlink{batch_8cpp_a0c8064fe36748c645a94c0044c15e467}{locations}}, int id)
+\begin{DoxyCompactList}\small\item\em Retrieves the code of a location by its ID. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{parser_8cpp_aa925777c0354080209b18e0834117a67}{get\+Id\+By\+Code}} (const vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \&\mbox{\hyperlink{batch_8cpp_a0c8064fe36748c645a94c0044c15e467}{locations}}, const string \&code)
+\begin{DoxyCompactList}\small\item\em Retrieves the ID of a location by its code. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{parser_8cpp_a2380530bf87674a2614023ea4b2dd14a}{clean\+Code}} (const string \&code)
+\begin{DoxyCompactList}\small\item\em Removes spaces from a location code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{parser_8cpp_a2380530bf87674a2614023ea4b2dd14a}\index{parser.cpp@{parser.cpp}!cleanCode@{cleanCode}}
+\index{cleanCode@{cleanCode}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{cleanCode()}{cleanCode()}}
+{\footnotesize\ttfamily \label{parser_8cpp_a2380530bf87674a2614023ea4b2dd14a} 
+string clean\+Code (\begin{DoxyParamCaption}\item[{const string \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Removes spaces from a location code. 
+
+Cleans a location code.
+
+This function removes any spaces from a location code string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The location code to clean. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cleaned location code with no spaces.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(k), where k is the length of the input string, as each character is processed. 
+\end{DoxyNote}
+\Hypertarget{parser_8cpp_a92ce917ad9126e93a2c9f2c4565b6160}\index{parser.cpp@{parser.cpp}!getCodeById@{getCodeById}}
+\index{getCodeById@{getCodeById}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{getCodeById()}{getCodeById()}}
+{\footnotesize\ttfamily \label{parser_8cpp_a92ce917ad9126e93a2c9f2c4565b6160} 
+string get\+Code\+By\+Id (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \&}]{locations}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the code of a location by its ID. 
+
+Retrieves a location code by ID.
+
+This function searches through a vector of {\ttfamily \doxylink{struct_location}{Location}} objects and returns the corresponding code for a given ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em locations} & The vector of {\ttfamily \doxylink{struct_location}{Location}} objects. \\
+\hline
+{\em id} & The ID of the location to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The code of the location if found, otherwise an empty string.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of locations in the vector, as each location is checked once. 
+\end{DoxyNote}
+\Hypertarget{parser_8cpp_aa925777c0354080209b18e0834117a67}\index{parser.cpp@{parser.cpp}!getIdByCode@{getIdByCode}}
+\index{getIdByCode@{getIdByCode}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{getIdByCode()}{getIdByCode()}}
+{\footnotesize\ttfamily \label{parser_8cpp_aa925777c0354080209b18e0834117a67} 
+int get\+Id\+By\+Code (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \&}]{locations}{, }\item[{const string \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the ID of a location by its code. 
+
+Retrieves a location ID by code.
+
+This function searches through a vector of {\ttfamily \doxylink{struct_location}{Location}} objects and returns the corresponding ID for a given code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em locations} & The vector of {\ttfamily \doxylink{struct_location}{Location}} objects. \\
+\hline
+{\em code} & The code of the location to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ID of the location if found, otherwise -\/1.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of locations in the vector, as each location is checked once. 
+\end{DoxyNote}
+\Hypertarget{parser_8cpp_aca545d8b008e77f3a78d78c0020e98f5}\index{parser.cpp@{parser.cpp}!parseDistances@{parseDistances}}
+\index{parseDistances@{parseDistances}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{parseDistances()}{parseDistances()}}
+{\footnotesize\ttfamily \label{parser_8cpp_aca545d8b008e77f3a78d78c0020e98f5} 
+vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ parse\+Distances (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Parses a CSV file containing distance data. 
+
+Parses distances from a file.
+
+This function reads a file containing distance data and returns a vector of {\ttfamily \doxylink{struct_edge}{Edge}} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the CSV file containing distance data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of {\ttfamily \doxylink{struct_edge}{Edge}} objects.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(m), where m is the number of lines (edges) in the file. Each line is processed sequentially. 
+\end{DoxyNote}
+\Hypertarget{parser_8cpp_a7145ffaf1f00013bb353ca6ffad69b66}\index{parser.cpp@{parser.cpp}!parseLocations@{parseLocations}}
+\index{parseLocations@{parseLocations}!parser.cpp@{parser.cpp}}
+\doxysubsubsection{\texorpdfstring{parseLocations()}{parseLocations()}}
+{\footnotesize\ttfamily \label{parser_8cpp_a7145ffaf1f00013bb353ca6ffad69b66} 
+vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ parse\+Locations (\begin{DoxyParamCaption}\item[{const string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Parses a CSV file containing location data. 
+
+Parses locations from a file.
+
+This function reads a file containing location data and returns a vector of {\ttfamily \doxylink{struct_location}{Location}} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the CSV file containing location data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of {\ttfamily \doxylink{struct_location}{Location}} objects.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of lines (locations) in the file. Each line is processed sequentially. 
+\end{DoxyNote}

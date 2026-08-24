@@ -1,0 +1,192 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/main.c@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/main.c}}
+
+
+Main file for the LCOM game project.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}devices/timer.\+h"{}}\newline
+{\ttfamily \#include "{}devices/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}devices/mouse.\+h"{}}\newline
+{\ttfamily \#include "{}devices/video.\+h"{}}\newline
+{\ttfamily \#include "{}game/game.\+h"{}}\newline
+{\ttfamily \#include "{}xpm/pixmap.\+h"{}}\newline
+{\ttfamily \#include "{}game/menu\+\_\+state.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+int {\bfseries main} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Entry point of the program. Initializes LCF and delegates control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a5cd18ae15af6e4a518659968435940d5}{menu\+\_\+interrupts}} (uint8\+\_\+t mouse\+\_\+mask, uint8\+\_\+t \mbox{\hyperlink{main_8c_a1fbb883e174af0f38e0469e8dd111ba8}{keyboard\+\_\+mask}})
+\begin{DoxyCompactList}\small\item\em Handles interrupts during menu and info states. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae35e8f41e7a215f84fb258ff44dfb9d3}{game\+\_\+interrupts}} (uint8\+\_\+t timer\+\_\+mask, uint8\+\_\+t \mbox{\hyperlink{main_8c_a1fbb883e174af0f38e0469e8dd111ba8}{keyboard\+\_\+mask}}, uint8\+\_\+t mouse\+\_\+mask)
+\begin{DoxyCompactList}\small\item\em Handles interrupts during gameplay. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_ae1c05d39e1bfaafa322338fa30c0b8b5}\label{main_8c_ae1c05d39e1bfaafa322338fa30c0b8b5} 
+int {\bfseries subscrive\+\_\+interrupts} ()
+\item 
+int \mbox{\hyperlink{main_8c_ad935b8489d587f347f5beebd0a8c3acb}{unsubscrive\+\_\+interrupts}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes interrupts for timer, keyboard, and mouse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a460d989b00f89a6100d2fe4f2503ff80}{conf\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Configures mouse to stream mode and enable data reporting. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a7a72220d8366dd84709e79ce415862e5}{proj\+\_\+main\+\_\+loop}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Main game loop controlled by game state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_aa1de7a5557e9d96b83cf03f73c92163f}\label{main_8c_aa1de7a5557e9d96b83cf03f73c92163f} 
+uint8\+\_\+t {\bfseries scancode}
+\begin{DoxyCompactList}\small\item\em Latest scancode read from the keyboard interrupt handler. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a617a47c70795bcff659815ad0efd2266}\label{main_8c_a617a47c70795bcff659815ad0efd2266} 
+int {\bfseries counter}
+\item 
+\Hypertarget{main_8c_a3b2e64ffb96c650d6525c99be01c7331}\label{main_8c_a3b2e64ffb96c650d6525c99be01c7331} 
+struct packet {\bfseries mouse\+\_\+packet}
+\item 
+\Hypertarget{main_8c_a99843649a620223abe809c50e384c20e}\label{main_8c_a99843649a620223abe809c50e384c20e} 
+uint8\+\_\+t {\bfseries mouse\+\_\+counter}
+\item 
+\Hypertarget{main_8c_a9a27098ef2c3f4770fd8d4102a089c35}\label{main_8c_a9a27098ef2c3f4770fd8d4102a089c35} 
+message {\bfseries msg}
+\item 
+\Hypertarget{main_8c_a6150e0515f7202e2fb518f7206ed97dc}\label{main_8c_a6150e0515f7202e2fb518f7206ed97dc} 
+int {\bfseries x}
+\item 
+\Hypertarget{main_8c_a0a2f84ed7838f07779ae24c5a9086d33}\label{main_8c_a0a2f84ed7838f07779ae24c5a9086d33} 
+int {\bfseries y}
+\item 
+\Hypertarget{main_8c_a6ed9079283c2964b8f1c5bfccfc8727e}\label{main_8c_a6ed9079283c2964b8f1c5bfccfc8727e} 
+\mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} {\bfseries current\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Global variable tracking the current game state. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a1fbb883e174af0f38e0469e8dd111ba8}{keyboard\+\_\+mask}}
+\begin{DoxyCompactList}\small\item\em Subscribes interrupts for timer, keyboard, and mouse. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_ac6914c4e2d1e6e563092d1a73b447543}\label{main_8c_ac6914c4e2d1e6e563092d1a73b447543} 
+uint8\+\_\+t {\bfseries timer\+\_\+mask} = 0
+\item 
+\Hypertarget{main_8c_a223ea0d6859db2c0986dac183a549f2f}\label{main_8c_a223ea0d6859db2c0986dac183a549f2f} 
+uint8\+\_\+t {\bfseries mouse\+\_\+mask}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main file for the LCOM game project. 
+
+Contains the program entry point, interrupt handling logic, and the game loop controller. Manages the interaction between hardware devices (mouse, keyboard, timer) and game states.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a460d989b00f89a6100d2fe4f2503ff80}\index{main.c@{main.c}!conf\_mouse@{conf\_mouse}}
+\index{conf\_mouse@{conf\_mouse}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{conf\_mouse()}{conf\_mouse()}}
+{\footnotesize\ttfamily \label{main_8c_a460d989b00f89a6100d2fe4f2503ff80} 
+int conf\+\_\+mouse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Configures mouse to stream mode and enable data reporting. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+\Hypertarget{main_8c_ae35e8f41e7a215f84fb258ff44dfb9d3}\index{main.c@{main.c}!game\_interrupts@{game\_interrupts}}
+\index{game\_interrupts@{game\_interrupts}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{game\_interrupts()}{game\_interrupts()}}
+{\footnotesize\ttfamily \label{main_8c_ae35e8f41e7a215f84fb258ff44dfb9d3} 
+void game\+\_\+interrupts (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer\+\_\+mask}{, }\item[{uint8\+\_\+t}]{keyboard\+\_\+mask}{, }\item[{uint8\+\_\+t}]{mouse\+\_\+mask}{}\end{DoxyParamCaption})}
+
+
+
+Handles interrupts during gameplay. 
+
+Manages timer updates, keyboard events, and mouse input for the playing state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer\+\_\+mask} & IRQ mask for timer. \\
+\hline
+{\em keyboard\+\_\+mask} & IRQ mask for keyboard. \\
+\hline
+{\em mouse\+\_\+mask} & IRQ mask for mouse. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8c_a5cd18ae15af6e4a518659968435940d5}\index{main.c@{main.c}!menu\_interrupts@{menu\_interrupts}}
+\index{menu\_interrupts@{menu\_interrupts}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{menu\_interrupts()}{menu\_interrupts()}}
+{\footnotesize\ttfamily \label{main_8c_a5cd18ae15af6e4a518659968435940d5} 
+void menu\+\_\+interrupts (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mouse\+\_\+mask}{, }\item[{uint8\+\_\+t}]{keyboard\+\_\+mask}{}\end{DoxyParamCaption})}
+
+
+
+Handles interrupts during menu and info states. 
+
+Processes mouse and keyboard input to handle menu navigation and state transitions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+\_\+mask} & IRQ mask for mouse. \\
+\hline
+{\em keyboard\+\_\+mask} & IRQ mask for keyboard. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8c_a7a72220d8366dd84709e79ce415862e5}\index{main.c@{main.c}!proj\_main\_loop@{proj\_main\_loop}}
+\index{proj\_main\_loop@{proj\_main\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{proj\_main\_loop()}{proj\_main\_loop()}}
+{\footnotesize\ttfamily \label{main_8c_a7a72220d8366dd84709e79ce415862e5} 
+int proj\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Main game loop controlled by game state. 
+
+Initializes video mode, configures devices, and handles state-\/specific loops until STATE\+\_\+\+EXIT is reached.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command line arguments. \\
+\hline
+{\em argv} & Array of command line argument strings. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on error. 
+\end{DoxyReturn}
+\Hypertarget{main_8c_ad935b8489d587f347f5beebd0a8c3acb}\index{main.c@{main.c}!unsubscrive\_interrupts@{unsubscrive\_interrupts}}
+\index{unsubscrive\_interrupts@{unsubscrive\_interrupts}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{unsubscrive\_interrupts()}{unsubscrive\_interrupts()}}
+{\footnotesize\ttfamily \label{main_8c_ad935b8489d587f347f5beebd0a8c3acb} 
+int unsubscrive\+\_\+interrupts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unsubscribes interrupts for timer, keyboard, and mouse. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a1fbb883e174af0f38e0469e8dd111ba8}\index{main.c@{main.c}!keyboard\_mask@{keyboard\_mask}}
+\index{keyboard\_mask@{keyboard\_mask}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{keyboard\_mask}{keyboard\_mask}}
+{\footnotesize\ttfamily \label{main_8c_a1fbb883e174af0f38e0469e8dd111ba8} 
+uint8\+\_\+t keyboard\+\_\+mask}
+
+
+
+Subscribes interrupts for timer, keyboard, and mouse. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on failure. 
+\end{DoxyReturn}

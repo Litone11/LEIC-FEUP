@@ -1,0 +1,57 @@
+\doxysection{font.\+h}
+\hypertarget{font_8h_source}{}\label{font_8h_source}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/xpm/font.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/xpm/font.h}}
+\mbox{\hyperlink{font_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FONT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FONT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <lcom/xpm.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ Declare\ external\ references\ to\ character\ XPMs}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_A;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_B;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_C;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_D;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_E;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_F;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_G;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_H;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_I;}
+\DoxyCodeLine{00032\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_J;}
+\DoxyCodeLine{00033\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_K;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_L;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_M;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_N;}
+\DoxyCodeLine{00037\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_O;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_P;}
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_Q;}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_R;}
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_S;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_T;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_U;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_V;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_W;}
+\DoxyCodeLine{00046\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_X;}
+\DoxyCodeLine{00047\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_Y;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_Z;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_0;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_1;}
+\DoxyCodeLine{00052\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_2;}
+\DoxyCodeLine{00053\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_3;}
+\DoxyCodeLine{00054\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_4;}
+\DoxyCodeLine{00055\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_5;}
+\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_6;}
+\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_7;}
+\DoxyCodeLine{00058\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_8;}
+\DoxyCodeLine{00059\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_9;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{extern}\ xpm\_row\_t\ \textcolor{keyword}{const}\ *char\_colon;\ \textcolor{comment}{//\ ':'}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{font_8h_a4a074c2a624571d07aa6078eda1d890b}{draw\_text}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ spacing);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FONT\_H}}
+
+\end{DoxyCode}

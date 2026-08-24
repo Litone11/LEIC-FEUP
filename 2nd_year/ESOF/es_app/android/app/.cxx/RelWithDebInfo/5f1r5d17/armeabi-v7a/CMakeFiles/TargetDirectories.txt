@@ -1,0 +1,2 @@
+/Users/luismartins/2LEIC13T2/es_app/android/app/.cxx/RelWithDebInfo/5f1r5d17/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/luismartins/2LEIC13T2/es_app/android/app/.cxx/RelWithDebInfo/5f1r5d17/armeabi-v7a/CMakeFiles/rebuild_cache.dir

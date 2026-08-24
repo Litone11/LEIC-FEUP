@@ -1,0 +1,129 @@
+\doxysection{Graph Class Reference}
+\hypertarget{class_graph}{}\label{class_graph}\index{Graph@{Graph}}
+
+
+Represents a directed graph with weighted edges.  
+
+
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_graph_aa2c7c51cdbf11f8267cfac35956d15a0}{add\+Edge}} (const string \&from, const string \&to, int driving\+Time, int walking\+Time)
+\begin{DoxyCompactList}\small\item\em Adds an edge to the graph. \end{DoxyCompactList}\item 
+const map$<$ string, vector$<$ pair$<$ string, \mbox{\hyperlink{struct_edge_data}{Edge\+Data}} $>$ $>$ $>$ \& \mbox{\hyperlink{class_graph_a5dde0d04405bc9f1ec095763be3a730f}{get\+Adjacency\+List}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the adjacency list of the graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a33dcfbe6d2ec42e6b781606961caa98d}{print\+Graph}} () const
+\begin{DoxyCompactList}\small\item\em Prints the graph structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, vector$<$ pair$<$ string, \mbox{\hyperlink{struct_edge_data}{Edge\+Data}} $>$ $>$ $>$ \mbox{\hyperlink{class_graph_a717b5b22b1df5c8f380e46c0120e0968}{adj}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a directed graph with weighted edges. 
+
+The \doxylink{class_graph}{Graph} class stores nodes and edges, where each edge has a driving time and a walking time. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_graph_aa2c7c51cdbf11f8267cfac35956d15a0}\index{Graph@{Graph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily \label{class_graph_aa2c7c51cdbf11f8267cfac35956d15a0} 
+void Graph\+::add\+Edge (\begin{DoxyParamCaption}\item[{const string \&}]{from}{, }\item[{const string \&}]{to}{, }\item[{int}]{driving\+Time}{, }\item[{int}]{walking\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Adds an edge to the graph. 
+
+Adds an edge between two nodes (bidirectional) with driving and walking times.
+
+Adds a directed edge from one node to another with specified driving and walking times.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & The starting node of the edge. \\
+\hline
+{\em to} & The destination node of the edge. \\
+\hline
+{\em driving\+Time} & The time required to drive from {\ttfamily from} to {\ttfamily to}. \\
+\hline
+{\em walking\+Time} & The time required to walk from {\ttfamily from} to {\ttfamily to}.\\
+\hline
+\end{DoxyParams}
+This function creates an edge in both directions between the specified nodes and associates the given driving and walking times with the edge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & The starting node of the edge. \\
+\hline
+{\em to} & The ending node of the edge. \\
+\hline
+{\em driving\+Time} & The time taken to drive from \textquotesingle{}from\textquotesingle{} to \textquotesingle{}to\textquotesingle{}. \\
+\hline
+{\em walking\+Time} & The time taken to walk from \textquotesingle{}from\textquotesingle{} to \textquotesingle{}to\textquotesingle{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(1), as adding an edge to the adjacency list is a constant-\/time operation. 
+\end{DoxyNote}
+\Hypertarget{class_graph_a5dde0d04405bc9f1ec095763be3a730f}\index{Graph@{Graph}!getAdjacencyList@{getAdjacencyList}}
+\index{getAdjacencyList@{getAdjacencyList}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getAdjacencyList()}{getAdjacencyList()}}
+{\footnotesize\ttfamily \label{class_graph_a5dde0d04405bc9f1ec095763be3a730f} 
+const map$<$ string, vector$<$ pair$<$ string, \mbox{\hyperlink{struct_edge_data}{Edge\+Data}} $>$ $>$ $>$ \& Graph\+::get\+Adjacency\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the adjacency list of the graph. 
+
+Returns the adjacency list of the graph.
+
+Provides a reference to the internal adjacency list structure, representing all nodes and edges.
+
+\begin{DoxyReturn}{Returns}
+A const reference to the adjacency list map.
+\end{DoxyReturn}
+This function provides access to the internal representation of the graph, which is stored as a map of nodes to their respective edges.
+
+\begin{DoxyReturn}{Returns}
+A constant reference to a map where each key is a node and the value is a vector of pairs representing the connected nodes and their edge data.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(1), as accessing the adjacency list is a constant-\/time operation. 
+\end{DoxyNote}
+\Hypertarget{class_graph_a33dcfbe6d2ec42e6b781606961caa98d}\index{Graph@{Graph}!printGraph@{printGraph}}
+\index{printGraph@{printGraph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{printGraph()}{printGraph()}}
+{\footnotesize\ttfamily \label{class_graph_a33dcfbe6d2ec42e6b781606961caa98d} 
+void Graph\+::print\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Prints the graph structure. 
+
+Outputs the graph\textquotesingle{}s adjacency list to the console for visualization.
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of nodes in the graph, as each node and its edges are printed. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_graph_a717b5b22b1df5c8f380e46c0120e0968}\index{Graph@{Graph}!adj@{adj}}
+\index{adj@{adj}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{adj}{adj}}
+{\footnotesize\ttfamily \label{class_graph_a717b5b22b1df5c8f380e46c0120e0968} 
+map$<$string, vector$<$pair$<$string, \mbox{\hyperlink{struct_edge_data}{Edge\+Data}}$>$ $>$ $>$ Graph\+::adj\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/luismartins/\+CLion\+Projects/untitled5/\mbox{\hyperlink{graph_8h}{graph.\+h}}\item 
+/\+Users/luismartins/\+CLion\+Projects/untitled5/\mbox{\hyperlink{graph_8cpp}{graph.\+cpp}}\end{DoxyCompactItemize}

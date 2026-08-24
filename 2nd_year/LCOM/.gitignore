@@ -1,0 +1,39 @@
+# Compiled source
+*.class
+*.o
+*.so
+
+# Packages
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Node.js dependencies
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Build directories
+build/
+dist/
+
+# Minix specific
+*.out
+*.elf
+core.*
+trace.txt
+.gdbinit

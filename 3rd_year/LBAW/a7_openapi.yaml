@@ -1,0 +1,461 @@
+openapi: 3.0.0
+
+info:
+  version: "1.0"
+  title: "ATLAS"
+  description: "Web Resources Specification (A7) for ATLAS"
+
+servers:
+  - url: http://lbaw.fe.up.pt
+    description: Production server
+
+externalDocs:
+  description: Find more info in our Wiki!
+  url: https://gitlab.up.pt/lbaw/lbaw2526/lbaw25136/-/wikis/3.-EAP---Architecture-Specification-and-Prototype
+
+tags:
+  - name: "M01: Home, Navigation & Static Content"
+  - name: "M02: Authentication & Account Management"
+  - name: "M03: User Profile"
+  - name: "M04: Search & Dashboard"
+  - name: "M05: Project Management"
+  - name: "M06: Task Management"
+  - name: "M07: Administration"
+
+paths:
+
+  # M01 — HOME, NAVIGATION & STATIC CONTENT
+  /:
+    get:
+      operationId: R101
+      summary: "R101: View Home Page"
+      description: "Show the public homepage. Access: PUB"
+      tags:
+        - "M01: Home, Navigation & Static Content"
+      responses:
+        "200":
+          description: "Ok. Show Home page UI"
+
+  /about:
+    get:
+      operationId: R102
+      summary: "R102: View About Page"
+      description: "Show static About page. Access: PUB"
+      tags:
+        - "M01: Home, Navigation & Static Content"
+      responses:
+        "200":
+          description: "Ok. Show About page UI"
+
+  /features:
+    get:
+      operationId: R103
+      summary: "R103: View Features Page"
+      description: "Show static Features page. Access: PUB"
+      tags:
+        - "M01: Home, Navigation & Static Content"
+      responses:
+        "200":
+          description: "Ok. Show Features page UI"
+
+  /contact:
+    get:
+      operationId: R104
+      summary: "R104: View Contact Page"
+      description: "Show static Contact page. Access: PUB"
+      tags:
+        - "M01: Home, Navigation & Static Content"
+      responses:
+        "200":
+          description: "Ok. Show Contact page UI"
+
+  # M02 — Authentication
+  /login:
+    get:
+      operationId: R201
+      summary: "R201: Login Page"
+      description: "Show Login page with provided form. Access: PUB"
+      tags:
+        - "M02: Authentication & Account Management"
+      responses:
+        "200":
+          description: "Ok. Show Log-in UI"
+
+    post:
+      operationId: R202
+      summary: "R202: Login Action"
+      description: "Processes login form submission. Access: PUB"
+      tags:
+        - "M02: Authentication & Account Management"
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - email
+                - password
+              example:
+                email: "alice@example.com"
+                password: "123123123"
+
+      responses:
+        "302":
+          description: "Redirect after login attempt."
+          headers:
+            Location:
+              schema:
+                type: string
+              examples:
+                302Success:
+                  description: "Redirect to dashboard."
+                  value: "/dashboard"
+                302Failure:
+                  description: "Failed login. Redirect back to login page."
+                  value: "/login"
+  /register:
+    get:
+      operationId: R203
+      summary: "R203: Register Page"
+      description: "Show user registration page with provided form. Access: PUB"
+      tags:
+        - "M02: Authentication & Account Management"
+      responses:
+        "200":
+          description: "Ok. Show registration UI"
+
+    post:
+      operationId: R204
+      summary: "R204: Register Action"
+      description: "Process registration. Access: PUB"
+      tags:
+        - "M02: Authentication & Account Management"
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+                - name
+                - email
+                - password
+
+      responses:
+        "302":
+          description: "Redirect after registration."
+          headers:
+            Location:
+              schema:
+                type: string
+              examples:
+                302Success:
+                  description: "User created. Redirect to dashboard."
+                  value: "/dashboard"
+                302Failure:
+                  description: "Registration failed. Redirect back."
+                  value: "/register"
+  /logout:
+    get:
+      operationId: R205
+      summary: "R205: Logout Action"
+      description: "Logout current user. Access: USR"
+      tags:
+        - "M02: Authentication & Account Management"
+      responses:
+        "302":
+          description: "Logout successful. Redirect to home page."
+          headers:
+            Location:
+              schema:
+                type: string
+              example: "/"
+
+
+  # M03 — USER PROFILE
+  /profile:
+    get:
+      operationId: R301
+      summary: "R301: View Profile"
+      description: "Show authenticated user's profile. Access: USR"
+      tags:
+        - "M03: User Profile"
+      responses:
+        "200":
+          description: "Show profile UI"
+
+    post:
+      operationId: R302
+      summary: "R302: Update Profile"
+      description: "Update profile information. Access: USR"
+      tags:
+        - "M03: User Profile"
+      requestBody:
+        required: false
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                picture:
+                  type: string
+                  format: binary
+      responses:
+        "302":
+          description: "Redirect after updating."
+          headers:
+            Location:
+              schema:
+                type: string
+              examples:
+                success:
+                  description: "Redirect to profile page"
+                  value: "/profile"
+
+  # M04 — DASHBOARD
+  /dashboard:
+    get:
+      operationId: R401
+      summary: "R401: Dashboard Overview"
+      description: "Display personalized dashboard. Access: USR"
+      tags:
+        - "M04: Search & Dashboard"
+      responses:
+        "200":
+          description: "Show dashboard"
+
+  # M05 — PROJECT MANAGEMENT
+  /projects:
+    get:
+      operationId: R501
+      summary: "R501: List My Projects"
+      description: "Show all projects the user belongs to. Access: USR"
+      tags:
+        - "M05: Project Management"
+      parameters:
+        - in: query
+          name: search
+          schema:
+            type: string
+        - in: query
+          name: status
+          schema:
+            type: string
+            enum: [all, planning, in-progress, completed]
+        - in: query
+          name: sort
+          schema:
+            type: string
+            enum: [recent, oldest, progress]
+      responses:
+        "200":
+          description: "Show project list"
+
+    post:
+      operationId: R502
+      summary: "R502: Create Project"
+      description: "Create a new project. Access: USR"
+      tags:
+        - "M05: Project Management"
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                members:
+                  type: string
+                  description: "JSON array of user emails"
+              required:
+                - name
+                - description
+      responses:
+        "302":
+          description: "Redirect to the project page."
+          headers:
+            Location:
+              schema:
+                type: string
+              example: "/projects"
+
+  /projects/create:
+    get:
+      operationId: R503
+      summary: "R503: Project Creation Form"
+      description: "Show UI to create a new project. Access: USR"
+      tags:
+        - "M05: Project Management"
+      responses:
+        "200":
+          description: "Show project creation form"
+
+  /projects/{project}:
+    get:
+      operationId: R504
+      summary: "R504: View Project"
+      description: "Show project page including tasks. Access: MEM"
+      tags:
+        - "M05: Project Management"
+      parameters:
+        - in: path
+          name: project
+          schema:
+            type: integer
+          required: true
+      responses:
+        "200":
+          description: "Show project UI"
+
+  # M06 — TASK MANAGEMENT
+  /projects/{project}/tasks:
+    get:
+      operationId: R601
+      summary: "R601: View Project Tasks"
+      description: "Show tasks belonging to the project. Access: MEM"
+      tags:
+        - "M06: Task Management"
+      parameters:
+        - in: path
+          name: project
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: search
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Show list of tasks"
+
+    post:
+      operationId: R602
+      summary: "R602: Create Task"
+      description: "Create a task inside a project. Access: MEM"
+      tags:
+        - "M06: Task Management"
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                priority:
+                  type: string
+                  enum: [Urgent, High, Medium, Low]
+                due_at:
+                  type: string
+                  format: date
+              required:
+                - name
+                - description
+                - priority
+                - due_at
+      responses:
+        "302":
+          description: "Redirect to tasks page after creation."
+          headers:
+            Location:
+              schema:
+                type: string
+              example: "/projects/{project}/tasks"
+
+
+  /tasks/{task}:
+    get:
+      operationId: R603
+      summary: "R603: View Task"
+      description: "View detailed information about a task. Access: MEM"
+      tags:
+        - "M06: Task Management"
+      parameters:
+        - in: path
+          name: task
+          schema:
+            type: integer
+          required: true
+      responses:
+        "200":
+          description: "Show task UI"
+
+    patch:
+      operationId: R604
+      summary: "R604: Edit Task"
+      description: "Edit task details. Access: RES OR COO"
+      tags:
+        - "M06: Task Management"
+      requestBody:
+        required: false
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                status:
+                  type: string
+                  enum: [Untouched, InProgress, Done]
+                priority:
+                  type: string
+                  enum: [Urgent, High, Medium, Low]
+                due_at:
+                  type: string
+                  format: date
+      responses:
+        "302":
+          description: "Redirect after editing."
+
+  # M07 — ADMINISTRATION
+  /admin/dashboard:
+    get:
+      operationId: R701
+      summary: "R701: Admin Dashboard"
+      description: "Show user administration dashboard. Access: ADM"
+      tags:
+        - "M07: Administration"
+      responses:
+        "200":
+          description: "Show admin dashboard"
+
+  /admin/users/update:
+    post:
+      operationId: R702
+      summary: "R702: Edit User Account"
+      description: "Administrator updates user information. Access: ADM"
+      tags:
+        - "M07: Administration"
+      responses:
+        "302":
+          description: "Redirect after update."

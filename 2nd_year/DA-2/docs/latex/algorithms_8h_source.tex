@@ -1,0 +1,29 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/\+DAproj2/algorithms.h}
+\hypertarget{algorithms_8h_source}{}\label{algorithms_8h_source}\mbox{\hyperlink{algorithms_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ ALGORITHMS\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ ALGORITHMS\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pallet_8h}{Pallet.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_i_l_p_result}{ILPResult}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<int>\ selectedPallets;\ \textcolor{comment}{//\ pallet\ IDs}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ totalProfit;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ totalWeight;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{algorithms_8h_a23e8878ff37f951f8120eff3ed86d78b}{KBruteForce}}(\textcolor{keywordtype}{int}\ capacity,\ \textcolor{keyword}{const}\ std::vector<Pallet>\&\ pallets);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{algorithms_8h_a5c29647be91ae3a77bc59747d8bf3e47}{KDynamic}}(\textcolor{keywordtype}{int}\ capacity,\ \textcolor{keyword}{const}\ std::vector<Pallet>\&\ pallets);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{algorithms_8h_a85bf0aa88146554bb0477eaf81c77d81}{KProxy}}(\textcolor{keywordtype}{int}\ capacity,\ \textcolor{keyword}{const}\ std::vector<Pallet>\&\ pallets);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \mbox{\hyperlink{struct_i_l_p_result}{ILPResult}}\ \mbox{\hyperlink{algorithms_8h_aa6139b4baa2eebb510c807815b610dba}{solveILP}}(\textcolor{keyword}{const}\ std::vector<Pallet>\&\ pallets,\ \textcolor{keywordtype}{int}\ capacity);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

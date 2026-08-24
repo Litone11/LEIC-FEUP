@@ -1,0 +1,103 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/devices/i8254.h File Reference}
+\hypertarget{i8254_8h}{}\label{i8254_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/i8254.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/i8254.h}}
+
+
+Constants and macros for configuring the i8254 Timer.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{i8254_8h_acf926951944b6cf370b7229ebd50dd8b}\label{i8254_8h_acf926951944b6cf370b7229ebd50dd8b} 
+\#define {\bfseries TIMER\+\_\+\+FREQ}~1193182
+\begin{DoxyCompactList}\small\item\em clock frequency for timer in PC and AT \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a30bf84c312af248cb81bb224e09f9ba8}\label{i8254_8h_a30bf84c312af248cb81bb224e09f9ba8} 
+\#define {\bfseries TIMER0\+\_\+\+IRQ}~0
+\begin{DoxyCompactList}\small\item\em Timer 0 IRQ line. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_acc9ff9df4a9674a1ce9ba08fc4a4679e}\label{i8254_8h_acc9ff9df4a9674a1ce9ba08fc4a4679e} 
+\#define {\bfseries TIMER\+\_\+0}~0x40
+\begin{DoxyCompactList}\small\item\em Timer 0 count register. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_ac62c99c2a9289891c1b83052242cca49}\label{i8254_8h_ac62c99c2a9289891c1b83052242cca49} 
+\#define {\bfseries TIMER\+\_\+1}~0x41
+\begin{DoxyCompactList}\small\item\em Timer 1 count register. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a1f34f18ad0ab8cace46b615773b48735}\label{i8254_8h_a1f34f18ad0ab8cace46b615773b48735} 
+\#define {\bfseries TIMER\+\_\+2}~0x42
+\begin{DoxyCompactList}\small\item\em Timer 2 count register. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a282832448fb0281ef53d243c1cd48491}\label{i8254_8h_a282832448fb0281ef53d243c1cd48491} 
+\#define {\bfseries TIMER\+\_\+\+CTRL}~0x43
+\begin{DoxyCompactList}\small\item\em Control register. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a51b3a5e3d4811ca063fe25e35560ab40}\label{i8254_8h_a51b3a5e3d4811ca063fe25e35560ab40} 
+\#define {\bfseries SPEAKER\+\_\+\+CTRL}~0x61
+\begin{DoxyCompactList}\small\item\em Register for speaker control. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a6a4822642d40c248435692324a818010}\label{i8254_8h_a6a4822642d40c248435692324a818010} 
+\#define {\bfseries TIMER\+\_\+\+SEL0}~0x00
+\begin{DoxyCompactList}\small\item\em Control Word for Timer 0. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a8349623fd8d99f9cc5d8ae29d78594fc}\label{i8254_8h_a8349623fd8d99f9cc5d8ae29d78594fc} 
+\#define {\bfseries TIMER\+\_\+\+SEL1}~BIT(6)
+\begin{DoxyCompactList}\small\item\em Control Word for Timer 1. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a142a255de0dbc48aeabd45fc10c33672}\label{i8254_8h_a142a255de0dbc48aeabd45fc10c33672} 
+\#define {\bfseries TIMER\+\_\+\+SEL2}~BIT(7)
+\begin{DoxyCompactList}\small\item\em Control Word for Timer 2. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a4c2eecbfb96744a9c2af71dba75ecb18}\label{i8254_8h_a4c2eecbfb96744a9c2af71dba75ecb18} 
+\#define {\bfseries TIMER\+\_\+\+RB\+\_\+\+CMD}~(BIT(7) \texorpdfstring{$\vert$}{|} BIT(6))
+\begin{DoxyCompactList}\small\item\em Read Back Command. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_ac18cb814ebd0d67235392c330e0e3504}\label{i8254_8h_ac18cb814ebd0d67235392c330e0e3504} 
+\#define {\bfseries TIMER\+\_\+\+LSB}~BIT(4)
+\begin{DoxyCompactList}\small\item\em Initialize Counter LSB only. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04}\label{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04} 
+\#define {\bfseries TIMER\+\_\+\+MSB}~BIT(5)
+\begin{DoxyCompactList}\small\item\em Initialize Counter MSB only. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a8c0f1933323274c765e23837e4fbc8c7}\label{i8254_8h_a8c0f1933323274c765e23837e4fbc8c7} 
+\#define {\bfseries TIMER\+\_\+\+LSB\+\_\+\+MSB}~(\mbox{\hyperlink{i8254_8h_ac18cb814ebd0d67235392c330e0e3504}{TIMER\+\_\+\+LSB}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04}{TIMER\+\_\+\+MSB}})
+\begin{DoxyCompactList}\small\item\em Initialize LSB first and MSB afterwards. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a4745cbf21da3d3fea5dbb080b2b73bac}\label{i8254_8h_a4745cbf21da3d3fea5dbb080b2b73bac} 
+\#define {\bfseries TIMER\+\_\+\+SQR\+\_\+\+WAVE}~(BIT(2) \texorpdfstring{$\vert$}{|} BIT(1))
+\begin{DoxyCompactList}\small\item\em Mode 3\+: square wave generator. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a5d4449e0fa1cf4a4d107a48a04a1265f}\label{i8254_8h_a5d4449e0fa1cf4a4d107a48a04a1265f} 
+\#define {\bfseries TIMER\+\_\+\+RATE\+\_\+\+GEN}~BIT(2)
+\begin{DoxyCompactList}\small\item\em Mode 2\+: rate generator. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a325b992a371d5d981c4eceff42fa5956}\label{i8254_8h_a325b992a371d5d981c4eceff42fa5956} 
+\#define {\bfseries TIMER\+\_\+\+BCD}~0x01
+\begin{DoxyCompactList}\small\item\em Count in BCD. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_ad2913dcf2f91453317bd035589ac0a7d}\label{i8254_8h_ad2913dcf2f91453317bd035589ac0a7d} 
+\#define {\bfseries TIMER\+\_\+\+BIN}~0x00
+\begin{DoxyCompactList}\small\item\em Count in binary. \end{DoxyCompactList}\item 
+\Hypertarget{i8254_8h_a6c248216df24b5e9d907d126d80bd195}\label{i8254_8h_a6c248216df24b5e9d907d126d80bd195} 
+\#define {\bfseries TIMER\+\_\+\+RB\+\_\+\+COUNT\+\_\+}~BIT(5)
+\item 
+\Hypertarget{i8254_8h_a08b4952bb7058684a3f8f66be04dd45e}\label{i8254_8h_a08b4952bb7058684a3f8f66be04dd45e} 
+\#define {\bfseries TIMER\+\_\+\+RB\+\_\+\+STATUS\+\_\+}~BIT(4)
+\item 
+\#define \mbox{\hyperlink{i8254_8h_af598b17740e07842a0545af512714711}{TIMER\+\_\+\+RB\+\_\+\+SEL}}(n)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants and macros for configuring the i8254 Timer. 
+
+This header provides symbolic constants to interact with the i8254 programmable interval timer. It defines register addresses, control word formats, and timer modes for use in low-\/level time-\/related programming in Minix.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{i8254_8h_af598b17740e07842a0545af512714711}\index{i8254.h@{i8254.h}!TIMER\_RB\_SEL@{TIMER\_RB\_SEL}}
+\index{TIMER\_RB\_SEL@{TIMER\_RB\_SEL}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_RB\_SEL}{TIMER\_RB\_SEL}}
+{\footnotesize\ttfamily \label{i8254_8h_af598b17740e07842a0545af512714711} 
+\#define TIMER\+\_\+\+RB\+\_\+\+SEL(\begin{DoxyParamCaption}\item[{}]{n}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{BIT((n)\ +\ 1)}
+
+\end{DoxyCode}

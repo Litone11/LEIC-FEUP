@@ -1,0 +1,152 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/entities/entities.h File Reference}
+\hypertarget{entities_8h}{}\label{entities_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/entities/entities.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/entities/entities.h}}
+
+
+Entity management for player, bullets, enemies, and collisions.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}../devices/video.\+h"{}}\newline
+{\ttfamily \#include "{}xpm/pixmap.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}../devices/timer.\+h"{}}\newline
+{\ttfamily \#include "{}score.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_player}{Player}}
+\begin{DoxyCompactList}\small\item\em Structure representing the player entity. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_bullet}{Bullet}}
+\begin{DoxyCompactList}\small\item\em Structure representing a bullet entity. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_enemy}{Enemy}}
+\begin{DoxyCompactList}\small\item\em Structure representing an enemy entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{entities_8h_a204189692f22f1cbe1568f74d6a5d196}{player\+\_\+init}} (\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Initializes the player entity with default values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{entities_8h_a48aba35b16fec86de04d43d8bbf58d52}{player\+\_\+update}} (\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Updates the player\textquotesingle{}s position based on input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{entities_8h_a5bc989f5c33c69e61eba7ae40038d531}{player\+\_\+draw}} (const \mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Renders the player on screen. \end{DoxyCompactList}\item 
+\Hypertarget{entities_8h_aaefd54c5fe511f25edaa095716313ec1}\label{entities_8h_aaefd54c5fe511f25edaa095716313ec1} 
+void {\bfseries bullet\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the bullet list. \end{DoxyCompactList}\item 
+\Hypertarget{entities_8h_ab0f56549267de102c668f9d0a0c9705b}\label{entities_8h_ab0f56549267de102c668f9d0a0c9705b} 
+void {\bfseries bullet\+\_\+update} ()
+\begin{DoxyCompactList}\small\item\em Updates the positions of all active bullets. \end{DoxyCompactList}\item 
+\Hypertarget{entities_8h_a6079d5b6933477e096fde0c044f57bff}\label{entities_8h_a6079d5b6933477e096fde0c044f57bff} 
+void {\bfseries bullet\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Renders all active bullets on screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{entities_8h_ae08eaba0bd371bc1c612772ad8b73680}{bullet\+\_\+fire}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Fires a bullet from the specified position. \end{DoxyCompactList}\item 
+\Hypertarget{entities_8h_a30d354ee8ad57a956a0fc8d1550378c9}\label{entities_8h_a30d354ee8ad57a956a0fc8d1550378c9} 
+void {\bfseries enemy\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the enemy list. \end{DoxyCompactList}\item 
+\Hypertarget{entities_8h_ab1a3528f94136ff6adaddfaf817b2d8d}\label{entities_8h_ab1a3528f94136ff6adaddfaf817b2d8d} 
+void {\bfseries enemy\+\_\+update} ()
+\begin{DoxyCompactList}\small\item\em Spawns new enemies and updates their positions. \end{DoxyCompactList}\item 
+\Hypertarget{entities_8h_aecfb6f0994a63633511e0978024217df}\label{entities_8h_aecfb6f0994a63633511e0978024217df} 
+void {\bfseries enemy\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Renders all enemies on screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{entities_8h_a85f8ad21d51e662f79ae50dd1ba48d7b}{check\+\_\+collisions}} (\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}player)
+\begin{DoxyCompactList}\small\item\em Checks and handles collisions between bullets, enemies, and the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entity management for player, bullets, enemies, and collisions. 
+
+Declares structures and functions to handle player initialization and movement, bullet firing and updates, enemy spawning and movement, and collision detection.
+
+Used in the main game loop to manage interactions and gameplay logic.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{entities_8h_ae08eaba0bd371bc1c612772ad8b73680}\index{entities.h@{entities.h}!bullet\_fire@{bullet\_fire}}
+\index{bullet\_fire@{bullet\_fire}!entities.h@{entities.h}}
+\doxysubsubsection{\texorpdfstring{bullet\_fire()}{bullet\_fire()}}
+{\footnotesize\ttfamily \label{entities_8h_ae08eaba0bd371bc1c612772ad8b73680} 
+void bullet\+\_\+fire (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Fires a bullet from the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position to fire from. \\
+\hline
+{\em y} & Y position to fire from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{entities_8h_a85f8ad21d51e662f79ae50dd1ba48d7b}\index{entities.h@{entities.h}!check\_collisions@{check\_collisions}}
+\index{check\_collisions@{check\_collisions}!entities.h@{entities.h}}
+\doxysubsubsection{\texorpdfstring{check\_collisions()}{check\_collisions()}}
+{\footnotesize\ttfamily \label{entities_8h_a85f8ad21d51e662f79ae50dd1ba48d7b} 
+void check\+\_\+collisions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Checks and handles collisions between bullets, enemies, and the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player for collision detection. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{entities_8h_a5bc989f5c33c69e61eba7ae40038d531}\index{entities.h@{entities.h}!player\_draw@{player\_draw}}
+\index{player\_draw@{player\_draw}!entities.h@{entities.h}}
+\doxysubsubsection{\texorpdfstring{player\_draw()}{player\_draw()}}
+{\footnotesize\ttfamily \label{entities_8h_a5bc989f5c33c69e61eba7ae40038d531} 
+void player\+\_\+draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Renders the player on screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player to draw. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{entities_8h_a204189692f22f1cbe1568f74d6a5d196}\index{entities.h@{entities.h}!player\_init@{player\_init}}
+\index{player\_init@{player\_init}!entities.h@{entities.h}}
+\doxysubsubsection{\texorpdfstring{player\_init()}{player\_init()}}
+{\footnotesize\ttfamily \label{entities_8h_a204189692f22f1cbe1568f74d6a5d196} 
+void player\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the player entity with default values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player to initialize. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{entities_8h_a48aba35b16fec86de04d43d8bbf58d52}\index{entities.h@{entities.h}!player\_update@{player\_update}}
+\index{player\_update@{player\_update}!entities.h@{entities.h}}
+\doxysubsubsection{\texorpdfstring{player\_update()}{player\_update()}}
+{\footnotesize\ttfamily \label{entities_8h_a48aba35b16fec86de04d43d8bbf58d52} 
+void player\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} \texorpdfstring{$\ast$}{*}}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Updates the player\textquotesingle{}s position based on input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player to update. \\
+\hline
+\end{DoxyParams}

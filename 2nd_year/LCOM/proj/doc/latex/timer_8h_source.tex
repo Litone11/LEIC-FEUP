@@ -1,0 +1,31 @@
+\doxysection{timer.\+h}
+\hypertarget{timer_8h_source}{}\label{timer_8h_source}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/timer.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/timer.h}}
+\mbox{\hyperlink{timer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ TIMER\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ TIMER\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <lcom/timer.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ int\ (timer\_set\_frequency)(uint8\_t\ timer,\ uint32\_t\ freq);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ int\ (timer\_subscribe\_int)(uint8\_t\ *bit\_no);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ int\ (timer\_unsubscribe\_int)();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ void\ (timer\_int\_handler)();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ int\ (timer\_get\_conf)(uint8\_t\ timer,\ uint8\_t\ *st);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ int\ (timer\_display\_conf)(uint8\_t\ timer,\ uint8\_t\ st,\ \textcolor{keyword}{enum}\ timer\_status\_field\ field);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00076\ void\ (timer\_increment\_update)();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TIMER\_H}}
+\DoxyCodeLine{00079\ }
+
+\end{DoxyCode}

@@ -1,0 +1,157 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/devices/timer.h File Reference}
+\hypertarget{timer_8h}{}\label{timer_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/timer.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/timer.h}}
+
+
+Timer interface for configuring and handling the i8254 timer on Minix.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/timer.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{timer_8h_aca1506be74dfc71c6f90772ca269c619}{timer\+\_\+set\+\_\+frequency}} (uint8\+\_\+t timer, uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Sets the frequency of a given timer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8h_a6f786481e80308348d629d605ffa2d84}{timer\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes timer interrupts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8h_ab9eea51549744bca5c5c923b388bb4ee}{timer\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes timer interrupts. \end{DoxyCompactList}\item 
+\Hypertarget{timer_8h_a10fc9c867b15c7da6649311c9987cd17}\label{timer_8h_a10fc9c867b15c7da6649311c9987cd17} 
+void {\bfseries timer\+\_\+int\+\_\+handler} ()
+\begin{DoxyCompactList}\small\item\em Timer interrupt handler. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8h_afafc1891c876602d55b894103b1841a7}{timer\+\_\+get\+\_\+conf}} (uint8\+\_\+t timer, uint8\+\_\+t \texorpdfstring{$\ast$}{*}st)
+\begin{DoxyCompactList}\small\item\em Gets the configuration of a timer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8h_a2f6a1c71f61dce5b3b6eecba83e7d7e9}{timer\+\_\+display\+\_\+conf}} (uint8\+\_\+t timer, uint8\+\_\+t st, enum timer\+\_\+status\+\_\+field field)
+\begin{DoxyCompactList}\small\item\em Displays the configuration of a timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{timer_8h_afadf13fdfd04180b2ab31eddd514a9cc}{timer\+\_\+increment\+\_\+update}} ()
+\begin{DoxyCompactList}\small\item\em Increments the timer update counter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Timer interface for configuring and handling the i8254 timer on Minix. 
+
+Provides functions to set timer frequency, subscribe/unsubscribe interrupts, handle timer ticks, query and display configuration, and track timed updates.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{timer_8h_a2f6a1c71f61dce5b3b6eecba83e7d7e9}\index{timer.h@{timer.h}!timer\_display\_conf@{timer\_display\_conf}}
+\index{timer\_display\_conf@{timer\_display\_conf}!timer.h@{timer.h}}
+\doxysubsubsection{\texorpdfstring{timer\_display\_conf()}{timer\_display\_conf()}}
+{\footnotesize\ttfamily \label{timer_8h_a2f6a1c71f61dce5b3b6eecba83e7d7e9} 
+int timer\+\_\+display\+\_\+conf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer}{, }\item[{uint8\+\_\+t}]{st}{, }\item[{enum timer\+\_\+status\+\_\+field}]{field}{}\end{DoxyParamCaption})}
+
+
+
+Displays the configuration of a timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Timer to display. \\
+\hline
+{\em st} & Status byte. \\
+\hline
+{\em field} & Field to interpret. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}
+\Hypertarget{timer_8h_afafc1891c876602d55b894103b1841a7}\index{timer.h@{timer.h}!timer\_get\_conf@{timer\_get\_conf}}
+\index{timer\_get\_conf@{timer\_get\_conf}!timer.h@{timer.h}}
+\doxysubsubsection{\texorpdfstring{timer\_get\_conf()}{timer\_get\_conf()}}
+{\footnotesize\ttfamily \label{timer_8h_afafc1891c876602d55b894103b1841a7} 
+int timer\+\_\+get\+\_\+conf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{st}{}\end{DoxyParamCaption})}
+
+
+
+Gets the configuration of a timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Timer to query (0, 1, or 2). \\
+\hline
+{\em st} & Pointer to store the status byte. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}
+\Hypertarget{timer_8h_afadf13fdfd04180b2ab31eddd514a9cc}\index{timer.h@{timer.h}!timer\_increment\_update@{timer\_increment\_update}}
+\index{timer\_increment\_update@{timer\_increment\_update}!timer.h@{timer.h}}
+\doxysubsubsection{\texorpdfstring{timer\_increment\_update()}{timer\_increment\_update()}}
+{\footnotesize\ttfamily \label{timer_8h_afadf13fdfd04180b2ab31eddd514a9cc} 
+void timer\+\_\+increment\+\_\+update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Increments the timer update counter. 
+
+This function updates the global {\ttfamily timer\+\_\+update} variable that may be used to track timed events or elapsed time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em update} & Value to increment the timer update counter. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{timer_8h_aca1506be74dfc71c6f90772ca269c619}\index{timer.h@{timer.h}!timer\_set\_frequency@{timer\_set\_frequency}}
+\index{timer\_set\_frequency@{timer\_set\_frequency}!timer.h@{timer.h}}
+\doxysubsubsection{\texorpdfstring{timer\_set\_frequency()}{timer\_set\_frequency()}}
+{\footnotesize\ttfamily \label{timer_8h_aca1506be74dfc71c6f90772ca269c619} 
+int timer\+\_\+set\+\_\+frequency (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{timer}{, }\item[{uint32\+\_\+t}]{freq}{}\end{DoxyParamCaption})}
+
+
+
+Sets the frequency of a given timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & Timer to configure (0, 1, or 2). \\
+\hline
+{\em freq} & Desired frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}
+\Hypertarget{timer_8h_a6f786481e80308348d629d605ffa2d84}\index{timer.h@{timer.h}!timer\_subscribe\_int@{timer\_subscribe\_int}}
+\index{timer\_subscribe\_int@{timer\_subscribe\_int}!timer.h@{timer.h}}
+\doxysubsubsection{\texorpdfstring{timer\_subscribe\_int()}{timer\_subscribe\_int()}}
+{\footnotesize\ttfamily \label{timer_8h_a6f786481e80308348d629d605ffa2d84} 
+int timer\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{bit\+\_\+no}{}\end{DoxyParamCaption})}
+
+
+
+Subscribes timer interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Pointer to bit number to be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}
+\Hypertarget{timer_8h_ab9eea51549744bca5c5c923b388bb4ee}\index{timer.h@{timer.h}!timer\_unsubscribe\_int@{timer\_unsubscribe\_int}}
+\index{timer\_unsubscribe\_int@{timer\_unsubscribe\_int}!timer.h@{timer.h}}
+\doxysubsubsection{\texorpdfstring{timer\_unsubscribe\_int()}{timer\_unsubscribe\_int()}}
+{\footnotesize\ttfamily \label{timer_8h_ab9eea51549744bca5c5c923b388bb4ee} 
+int timer\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Unsubscribes timer interrupts. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}

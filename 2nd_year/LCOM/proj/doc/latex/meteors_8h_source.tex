@@ -1,0 +1,36 @@
+\doxysection{meteors.\+h}
+\hypertarget{meteors_8h_source}{}\label{meteors_8h_source}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/meteors.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/meteors.h}}
+\mbox{\hyperlink{meteors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ \_METEORS\_H\_}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ \_METEORS\_H\_}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{video_8h}{../devices/video.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../alive/object.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}../pixmap.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}../game.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MAX\_METEORS\ 20}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ vbe\_mode\_info\_t\ mode\_info;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ Object\ *meteors[MAX\_METEORS];}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ meteor\_count;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ create\_rate;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ decrease\_rate;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ min\_create\_rate;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{meteors_8h_a0dadc06ba3d75349466672107f4cd8a0}{init\_meteor\_system}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{meteors_8h_ac9dc975e1b752323590e7351eeada8fa}{check\_meteor\_spawn}}(\textcolor{keywordtype}{int}\ current\_time);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{meteors_8h_a2cf35df9aaa17fa4714bffab6d6bfab8}{spawn\_meteor}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{meteors_8h_ad655f4cf2967703728b17770205d9e2c}{update\_meteors}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{meteors_8h_a5a614b561b78988f8cfa33f2eb34d485}{handle\_meteors}}(\textcolor{keywordtype}{int}\ current\_time);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_METEORS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,109 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/game/meteors.h File Reference}
+\hypertarget{meteors_8h}{}\label{meteors_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/meteors.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/meteors.h}}
+
+
+Handles meteor entity logic including spawning, updating, and removal.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}../devices/video.\+h"{}}\newline
+{\ttfamily \#include "{}../alive/object.\+h"{}}\newline
+{\ttfamily \#include "{}../pixmap.\+h"{}}\newline
+{\ttfamily \#include "{}../game.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{meteors_8h_ac33f5334d5d532508492deeee33a50f2}\label{meteors_8h_ac33f5334d5d532508492deeee33a50f2} 
+\#define {\bfseries MAX\+\_\+\+METEORS}~20
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{meteors_8h_a0dadc06ba3d75349466672107f4cd8a0}\label{meteors_8h_a0dadc06ba3d75349466672107f4cd8a0} 
+void {\bfseries init\+\_\+meteor\+\_\+system} ()
+\begin{DoxyCompactList}\small\item\em Initializes the meteor system, resets all counters and meteors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{meteors_8h_ac9dc975e1b752323590e7351eeada8fa}{check\+\_\+meteor\+\_\+spawn}} (int current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Checks whether a new meteor should spawn at the current time. \end{DoxyCompactList}\item 
+\Hypertarget{meteors_8h_a2cf35df9aaa17fa4714bffab6d6bfab8}\label{meteors_8h_a2cf35df9aaa17fa4714bffab6d6bfab8} 
+void {\bfseries spawn\+\_\+meteor} ()
+\begin{DoxyCompactList}\small\item\em Spawns a new meteor object if space allows and updates spawn rate. \end{DoxyCompactList}\item 
+\Hypertarget{meteors_8h_ad655f4cf2967703728b17770205d9e2c}\label{meteors_8h_ad655f4cf2967703728b17770205d9e2c} 
+void {\bfseries update\+\_\+meteors} ()
+\begin{DoxyCompactList}\small\item\em Updates position of all active meteors and removes those off screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{meteors_8h_a5a614b561b78988f8cfa33f2eb34d485}{handle\+\_\+meteors}} (int current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Handles meteor lifecycle\+: checks spawn timing and updates all meteors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{meteors_8h_a9fcc2243068f8e628648febc0909c509}\label{meteors_8h_a9fcc2243068f8e628648febc0909c509} 
+vbe\+\_\+mode\+\_\+info\+\_\+t {\bfseries mode\+\_\+info}
+\item 
+\Hypertarget{meteors_8h_a8dd6e3855cb3036622869c6fbcc007a0}\label{meteors_8h_a8dd6e3855cb3036622869c6fbcc007a0} 
+Object \texorpdfstring{$\ast$}{*} {\bfseries meteors} \mbox{[}MAX\+\_\+\+METEORS\mbox{]}
+\item 
+\Hypertarget{meteors_8h_aadb1faba2d1aa1d728e6143aae70d8e3}\label{meteors_8h_aadb1faba2d1aa1d728e6143aae70d8e3} 
+int {\bfseries meteor\+\_\+count}
+\item 
+\Hypertarget{meteors_8h_a598f30551743952e718cecfc593aa746}\label{meteors_8h_a598f30551743952e718cecfc593aa746} 
+int {\bfseries create\+\_\+rate}
+\item 
+\Hypertarget{meteors_8h_a482e2512ff8d599bede39ef8656e0a62}\label{meteors_8h_a482e2512ff8d599bede39ef8656e0a62} 
+int {\bfseries decrease\+\_\+rate}
+\item 
+\Hypertarget{meteors_8h_a5a7eabba72292b498653415b13234bbb}\label{meteors_8h_a5a7eabba72292b498653415b13234bbb} 
+int {\bfseries min\+\_\+create\+\_\+rate}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles meteor entity logic including spawning, updating, and removal. 
+
+Declares functions and variables used to manage falling meteors on screen. Supports timed spawning, downward movement, and memory cleanup.
+
+This module is used in gameplay to add obstacles dynamically.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{meteors_8h_ac9dc975e1b752323590e7351eeada8fa}\index{meteors.h@{meteors.h}!check\_meteor\_spawn@{check\_meteor\_spawn}}
+\index{check\_meteor\_spawn@{check\_meteor\_spawn}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{check\_meteor\_spawn()}{check\_meteor\_spawn()}}
+{\footnotesize\ttfamily \label{meteors_8h_ac9dc975e1b752323590e7351eeada8fa} 
+int check\+\_\+meteor\+\_\+spawn (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+Checks whether a new meteor should spawn at the current time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & Global time counter used to control spawn rate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if it\textquotesingle{}s time to spawn a meteor, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{meteors_8h_a5a614b561b78988f8cfa33f2eb34d485}\index{meteors.h@{meteors.h}!handle\_meteors@{handle\_meteors}}
+\index{handle\_meteors@{handle\_meteors}!meteors.h@{meteors.h}}
+\doxysubsubsection{\texorpdfstring{handle\_meteors()}{handle\_meteors()}}
+{\footnotesize\ttfamily \label{meteors_8h_a5a614b561b78988f8cfa33f2eb34d485} 
+void handle\+\_\+meteors (\begin{DoxyParamCaption}\item[{int}]{current\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+Handles meteor lifecycle\+: checks spawn timing and updates all meteors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & Global time counter for determining spawn events. \\
+\hline
+\end{DoxyParams}

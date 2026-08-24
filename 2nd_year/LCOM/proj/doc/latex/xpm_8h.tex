@@ -1,0 +1,106 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/xpm/xpm.h File Reference}
+\hypertarget{xpm_8h}{}\label{xpm_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/xpm/xpm.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/xpm/xpm.h}}
+
+
+Utilities for handling and drawing \doxylink{struct_x_p_m}{XPM} images and animations.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_x_p_m}{XPM}}
+\begin{DoxyCompactList}\small\item\em Structure representing an \doxylink{struct_x_p_m}{XPM} image with position and pixel data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_x_p_m}{XPM}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{xpm_8h_a1b56f8880c5880792271d4ba961d7d43}{create\+\_\+xpm}} (xpm\+\_\+map\+\_\+t xpm, int x, int y)
+\begin{DoxyCompactList}\small\item\em Creates an \doxylink{struct_x_p_m}{XPM} image object from a raw \doxylink{struct_x_p_m}{XPM} map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{xpm_8h_a2f954b19e8d3b758aa1e3bdb8fd60ff0}{draw\+\_\+xpm}} (\mbox{\hyperlink{struct_x_p_m}{XPM}} \texorpdfstring{$\ast$}{*}xpm)
+\begin{DoxyCompactList}\small\item\em Draws the entire \doxylink{struct_x_p_m}{XPM} image at its position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{xpm_8h_ace456c0e1e53879dd54e32dfab64ccb5}{draw\+\_\+animations}} (\mbox{\hyperlink{struct_x_p_m}{XPM}} \texorpdfstring{$\ast$}{*}xpm, int n, int width\+\_\+total, int height\+\_\+total)
+\begin{DoxyCompactList}\small\item\em Draws a specific frame from an \doxylink{struct_x_p_m}{XPM} sprite sheet animation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utilities for handling and drawing \doxylink{struct_x_p_m}{XPM} images and animations. 
+
+Declares the \doxylink{struct_x_p_m}{XPM} structure and functions to load, draw, and animate \doxylink{struct_x_p_m}{XPM} images. Used for rendering static and animated sprites using the LCF graphics system.
+
+This module supports splitting a spritesheet into frames for animation playback.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{xpm_8h_a1b56f8880c5880792271d4ba961d7d43}\index{xpm.h@{xpm.h}!create\_xpm@{create\_xpm}}
+\index{create\_xpm@{create\_xpm}!xpm.h@{xpm.h}}
+\doxysubsubsection{\texorpdfstring{create\_xpm()}{create\_xpm()}}
+{\footnotesize\ttfamily \label{xpm_8h_a1b56f8880c5880792271d4ba961d7d43} 
+\mbox{\hyperlink{struct_x_p_m}{XPM}} \texorpdfstring{$\ast$}{*} create\+\_\+xpm (\begin{DoxyParamCaption}\item[{xpm\+\_\+map\+\_\+t}]{xpm}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Creates an \doxylink{struct_x_p_m}{XPM} image object from a raw \doxylink{struct_x_p_m}{XPM} map. 
+
+Allocates and loads the \doxylink{struct_x_p_m}{XPM} into memory, storing its position and dimensions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & Raw \doxylink{struct_x_p_m}{XPM} data (char\texorpdfstring{$\ast$}{*} array). \\
+\hline
+{\em x} & X position to place the image. \\
+\hline
+{\em y} & Y position to place the image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to an \doxylink{struct_x_p_m}{XPM} struct or NULL on failure. 
+\end{DoxyReturn}
+\Hypertarget{xpm_8h_ace456c0e1e53879dd54e32dfab64ccb5}\index{xpm.h@{xpm.h}!draw\_animations@{draw\_animations}}
+\index{draw\_animations@{draw\_animations}!xpm.h@{xpm.h}}
+\doxysubsubsection{\texorpdfstring{draw\_animations()}{draw\_animations()}}
+{\footnotesize\ttfamily \label{xpm_8h_ace456c0e1e53879dd54e32dfab64ccb5} 
+void draw\+\_\+animations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_x_p_m}{XPM}} \texorpdfstring{$\ast$}{*}}]{xpm}{, }\item[{int}]{n}{, }\item[{int}]{width\+\_\+total}{, }\item[{int}]{height\+\_\+total}{}\end{DoxyParamCaption})}
+
+
+
+Draws a specific frame from an \doxylink{struct_x_p_m}{XPM} sprite sheet animation. 
+
+Splits the \doxylink{struct_x_p_m}{XPM} into a grid of frames and draws the selected frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & Pointer to the \doxylink{struct_x_p_m}{XPM} sprite sheet. \\
+\hline
+{\em n} & Frame index to draw (row-\/major order). \\
+\hline
+{\em width\+\_\+total} & Total number of frames per row. \\
+\hline
+{\em height\+\_\+total} & Total number of frame rows. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{xpm_8h_a2f954b19e8d3b758aa1e3bdb8fd60ff0}\index{xpm.h@{xpm.h}!draw\_xpm@{draw\_xpm}}
+\index{draw\_xpm@{draw\_xpm}!xpm.h@{xpm.h}}
+\doxysubsubsection{\texorpdfstring{draw\_xpm()}{draw\_xpm()}}
+{\footnotesize\ttfamily \label{xpm_8h_a2f954b19e8d3b758aa1e3bdb8fd60ff0} 
+void draw\+\_\+xpm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_x_p_m}{XPM}} \texorpdfstring{$\ast$}{*}}]{xpm}{}\end{DoxyParamCaption})}
+
+
+
+Draws the entire \doxylink{struct_x_p_m}{XPM} image at its position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xpm} & Pointer to an \doxylink{struct_x_p_m}{XPM} object to render. \\
+\hline
+\end{DoxyParams}

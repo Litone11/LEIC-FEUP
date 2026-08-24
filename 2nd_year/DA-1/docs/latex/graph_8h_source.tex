@@ -1,0 +1,33 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/untitled5/graph.h}
+\hypertarget{graph_8h_source}{}\label{graph_8h_source}\mbox{\hyperlink{graph_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GRAPH\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GRAPH\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_edge_data}{EdgeData}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_edge_data_a221417619634aa421fbb604f9482a946}{drivingTime}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_edge_data_a54d23e5c05f4a78a6fc37132dae9b139}{walkingTime}};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_graph}{Graph}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ map<string,\ vector<pair<string,\ EdgeData>>>\ \mbox{\hyperlink{class_graph_a717b5b22b1df5c8f380e46c0120e0968}{adj}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_aa2c7c51cdbf11f8267cfac35956d15a0}{addEdge}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ from,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ to,\ \textcolor{keywordtype}{int}\ drivingTime,\ \textcolor{keywordtype}{int}\ walkingTime);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ map<string,\ vector<pair<string,\ EdgeData>>>\&\ \mbox{\hyperlink{class_graph_a5dde0d04405bc9f1ec095763be3a730f}{getAdjacencyList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graph_a33dcfbe6d2ec42e6b781606961caa98d}{printGraph}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

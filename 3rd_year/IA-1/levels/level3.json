@@ -1,0 +1,12 @@
+{
+    "capacity": 4,
+    "tubes": [
+        ["red", "blue", "green", "yellow"],
+        ["blue", "green", "yellow", "purple"],
+        ["green", "yellow", "purple", "red"],
+        ["yellow", "purple", "red", "blue"],
+        ["purple", "red", "blue", "green"],
+        [],
+        []
+    ]
+}

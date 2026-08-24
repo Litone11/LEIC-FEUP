@@ -1,0 +1,42 @@
+# Operating System
+.DS_Store
+Thumbs.db
+*.tmp
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# C / C++ / Build
+bin/
+build/
+*.o
+*.out
+*.exe
+*.so
+*.dylib
+*.a
+
+# Java / Maven / Gradle
+*.class
+target/
+.gradle/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+venv/
+*.egg-info/
+
+# Node / Web / Flutter
+node_modules/
+.dart_tool/
+.pub-cache/
+.pub/
+
+# Logs
+*.log

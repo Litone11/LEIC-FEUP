@@ -1,0 +1,69 @@
+\doxysection{entities.\+h}
+\hypertarget{entities_8h_source}{}\label{entities_8h_source}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/entities/entities.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/entities/entities.h}}
+\mbox{\hyperlink{entities_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ ENTITIES\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ ENTITIES\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{video_8h}{../devices/video.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pixmap_8h}{xpm/pixmap.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{timer_8h}{../devices/timer.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{score_8h}{score.h}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ width,\ height;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ speed;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ active;}
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{struct_player}{Player}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ speed;}
+\DoxyCodeLine{00042\ \}\ \mbox{\hyperlink{struct_bullet}{Bullet}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ width,\ height;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ speed;}
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{struct_enemy}{Enemy}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Player}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_a204189692f22f1cbe1568f74d6a5d196}{player\_init}}(\mbox{\hyperlink{struct_player}{Player}}\ *player);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_a48aba35b16fec86de04d43d8bbf58d52}{player\_update}}(\mbox{\hyperlink{struct_player}{Player}}\ *player);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_a5bc989f5c33c69e61eba7ae40038d531}{player\_draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_player}{Player}}\ *player);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ Bullet}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_aaefd54c5fe511f25edaa095716313ec1}{bullet\_init}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_ab0f56549267de102c668f9d0a0c9705b}{bullet\_update}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_a6079d5b6933477e096fde0c044f57bff}{bullet\_draw}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_ae08eaba0bd371bc1c612772ad8b73680}{bullet\_fire}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ Enemy}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_a30d354ee8ad57a956a0fc8d1550378c9}{enemy\_init}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_ab1a3528f94136ff6adaddfaf817b2d8d}{enemy\_update}}();}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_aecfb6f0994a63633511e0978024217df}{enemy\_draw}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ Collision}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{entities_8h_a85f8ad21d51e662f79ae50dd1ba48d7b}{check\_collisions}}(\mbox{\hyperlink{struct_player}{Player}}\ *player);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00123\ }
+
+\end{DoxyCode}

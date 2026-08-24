@@ -1,0 +1,24 @@
+\doxysection{KBC.\+h}
+\hypertarget{_k_b_c_8h_source}{}\label{_k_b_c_8h_source}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/KBC.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/KBC.h}}
+\mbox{\hyperlink{_k_b_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ \_LCOM\_KBC\_H\_}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ \_LCOM\_KBC\_H\_}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <minix/sysutil.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i8042_8h}{i8042.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <lcom/lcf.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ void\ (kbc\_ih)(void);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00046\ int\ (read\_KBC\_status)(uint8\_t*\ status);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00056\ int\ (read\_KBC\_output)(uint8\_t\ port,\ uint8\_t\ *output,\ \textcolor{keywordtype}{int}\ mouse);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ int\ (write\_KBC\_command)(uint8\_t\ port,\ uint8\_t\ commandByte,\ \textcolor{keywordtype}{int}\ mouse);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_LCOM\_KBC\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

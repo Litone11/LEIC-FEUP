@@ -1,0 +1,63 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/\+DAproj2/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{/Users/luismartins/CLionProjects/DAproj2/main.cpp@{/Users/luismartins/CLionProjects/DAproj2/main.cpp}}
+
+
+Command-\/line interface for testing multiple knapsack algorithms.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include "{}reader.\+h"{}}\newline
+{\ttfamily \#include "{}Pallet.\+h"{}}\newline
+{\ttfamily \#include "{}algorithms.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_aba5bd9067aa6f261123165a337c7957d}{show\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the algorithm selection menu. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to drive the knapsack algorithm selection and execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command-\/line interface for testing multiple knapsack algorithms. 
+
+Allows users to choose between brute-\/force, dynamic programming, greedy approximation, and ILP-\/style approaches to solve instances of the 0/1 knapsack problem. Reads dataset files and reports results including selected pallets, profit, and execution time.
+
+\begin{DoxyAuthor}{Author}
+João Taveira e Luís Martins 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/05-\/20 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main function to drive the knapsack algorithm selection and execution. 
+
+Repeatedly prompts the user to choose an algorithm and dataset, reads data files, and runs the selected algorithm. Outputs results and timing to the console.
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 upon successful program termination. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_aba5bd9067aa6f261123165a337c7957d}\index{main.cpp@{main.cpp}!showMenu@{showMenu}}
+\index{showMenu@{showMenu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{showMenu()}{showMenu()}}
+{\footnotesize\ttfamily \label{main_8cpp_aba5bd9067aa6f261123165a337c7957d} 
+void show\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the algorithm selection menu. 
+
+Lists available algorithmic options for solving the knapsack problem. 

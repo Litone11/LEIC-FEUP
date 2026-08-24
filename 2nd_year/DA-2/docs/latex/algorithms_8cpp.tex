@@ -1,0 +1,199 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/\+DAproj2/algorithms.cpp File Reference}
+\hypertarget{algorithms_8cpp}{}\label{algorithms_8cpp}\index{/Users/luismartins/CLionProjects/DAproj2/algorithms.cpp@{/Users/luismartins/CLionProjects/DAproj2/algorithms.cpp}}
+
+
+Implementation of four algorithmic approaches to solve the 0/1 Knapsack Problem.  
+
+
+{\ttfamily \#include "{}Pallet.\+h"{}}\newline
+{\ttfamily \#include "{}algorithms.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{algorithms_8cpp_a82580717ea5b45b852c8131bd39cf641}{knapsack\+Recursive}} (const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets, int index, int remaining\+Capacity, int current\+Profit, std\+::vector$<$ int $>$ \&current\+Subset, int \&best\+Profit, std\+::vector$<$ int $>$ \&best\+Subset)
+\begin{DoxyCompactList}\small\item\em Recursive brute-\/force solution to the 0/1 Knapsack Problem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{algorithms_8cpp_a23e8878ff37f951f8120eff3ed86d78b}{KBrute\+Force}} (int capacity, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Wrapper for brute-\/force recursive knapsack solver. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{algorithms_8cpp_a5c29647be91ae3a77bc59747d8bf3e47}{KDynamic}} (int capacity, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Dynamic programming solution to the 0/1 Knapsack Problem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{algorithms_8cpp_a85bf0aa88146554bb0477eaf81c77d81}{KProxy}} (int capacity, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Greedy approximation solution to the 0/1 Knapsack Problem. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_i_l_p_result}{ILPResult}} \mbox{\hyperlink{algorithms_8cpp_aa6139b4baa2eebb510c807815b610dba}{solve\+ILP}} (const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets, int capacity)
+\begin{DoxyCompactList}\small\item\em Solves the knapsack problem using ILP via branch and bound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{algorithms_8cpp_a8e3f7d24ad76fc5801b43d1d4f3e7b2e}{validate\+ILP}} (const \mbox{\hyperlink{struct_i_l_p_result}{ILPResult}} \&result, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets, int capacity)
+\begin{DoxyCompactList}\small\item\em Validates and checks consistency of an ILP solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of four algorithmic approaches to solve the 0/1 Knapsack Problem. 
+
+\begin{DoxyAuthor}{Author}
+João Taveira, Luís Martins 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/20
+\end{DoxyDate}
+This file includes\+:
+\begin{DoxyItemize}
+\item Brute-\/force recursive solution
+\item Dynamic programming solution
+\item Greedy heuristic solution
+\item Integer Linear Programming (ILP) style branch-\/and-\/bound solution 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{algorithms_8cpp_a23e8878ff37f951f8120eff3ed86d78b}\index{algorithms.cpp@{algorithms.cpp}!KBruteForce@{KBruteForce}}
+\index{KBruteForce@{KBruteForce}!algorithms.cpp@{algorithms.cpp}}
+\doxysubsubsection{\texorpdfstring{KBruteForce()}{KBruteForce()}}
+{\footnotesize\ttfamily \label{algorithms_8cpp_a23e8878ff37f951f8120eff3ed86d78b} 
+int KBrute\+Force (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Wrapper for brute-\/force recursive knapsack solver. 
+
+Solves the knapsack problem using brute-\/force recursion.
+
+Initializes tracking variables and prints selected pallet IDs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Max truck capacity. \\
+\hline
+{\em pallets} & List of available pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximum achievable profit. 
+\end{DoxyReturn}
+\Hypertarget{algorithms_8cpp_a5c29647be91ae3a77bc59747d8bf3e47}\index{algorithms.cpp@{algorithms.cpp}!KDynamic@{KDynamic}}
+\index{KDynamic@{KDynamic}!algorithms.cpp@{algorithms.cpp}}
+\doxysubsubsection{\texorpdfstring{KDynamic()}{KDynamic()}}
+{\footnotesize\ttfamily \label{algorithms_8cpp_a5c29647be91ae3a77bc59747d8bf3e47} 
+int KDynamic (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Dynamic programming solution to the 0/1 Knapsack Problem. 
+
+Solves the knapsack problem using dynamic programming.
+
+Builds a DP table to compute optimal profit with subproblem reuse. Also tracks the minimal number of pallets used to resolve ties.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Max truck capacity. \\
+\hline
+{\em pallets} & List of available pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximum achievable profit. 
+\end{DoxyReturn}
+\Hypertarget{algorithms_8cpp_a82580717ea5b45b852c8131bd39cf641}\index{algorithms.cpp@{algorithms.cpp}!knapsackRecursive@{knapsackRecursive}}
+\index{knapsackRecursive@{knapsackRecursive}!algorithms.cpp@{algorithms.cpp}}
+\doxysubsubsection{\texorpdfstring{knapsackRecursive()}{knapsackRecursive()}}
+{\footnotesize\ttfamily \label{algorithms_8cpp_a82580717ea5b45b852c8131bd39cf641} 
+int knapsack\+Recursive (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{index}{, }\item[{int}]{remaining\+Capacity}{, }\item[{int}]{current\+Profit}{, }\item[{std\+::vector$<$ int $>$ \&}]{current\+Subset}{, }\item[{int \&}]{best\+Profit}{, }\item[{std\+::vector$<$ int $>$ \&}]{best\+Subset}{}\end{DoxyParamCaption})}
+
+
+
+Recursive brute-\/force solution to the 0/1 Knapsack Problem. 
+
+Tries all combinations of including/excluding each pallet. Optimizes for maximum profit and minimal pallet usage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of pallets. \\
+\hline
+{\em index} & Current index of recursion. \\
+\hline
+{\em remaining\+Capacity} & Remaining capacity of the truck. \\
+\hline
+{\em current\+Profit} & Accumulated profit. \\
+\hline
+{\em current\+Subset} & Current pallet IDs being considered. \\
+\hline
+{\em best\+Profit} & Reference to best profit found. \\
+\hline
+{\em best\+Subset} & Reference to best subset found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Best profit found. 
+\end{DoxyReturn}
+\Hypertarget{algorithms_8cpp_a85bf0aa88146554bb0477eaf81c77d81}\index{algorithms.cpp@{algorithms.cpp}!KProxy@{KProxy}}
+\index{KProxy@{KProxy}!algorithms.cpp@{algorithms.cpp}}
+\doxysubsubsection{\texorpdfstring{KProxy()}{KProxy()}}
+{\footnotesize\ttfamily \label{algorithms_8cpp_a85bf0aa88146554bb0477eaf81c77d81} 
+int KProxy (\begin{DoxyParamCaption}\item[{int}]{capacity}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Greedy approximation solution to the 0/1 Knapsack Problem. 
+
+Solves the knapsack problem using a greedy heuristic approximation.
+
+Sorts pallets by profit-\/to-\/weight ratio and selects greedily. Does not guarantee optimality but is fast for large instances.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Max truck capacity. \\
+\hline
+{\em pallets} & List of available pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Approximate total profit. 
+\end{DoxyReturn}
+\Hypertarget{algorithms_8cpp_aa6139b4baa2eebb510c807815b610dba}\index{algorithms.cpp@{algorithms.cpp}!solveILP@{solveILP}}
+\index{solveILP@{solveILP}!algorithms.cpp@{algorithms.cpp}}
+\doxysubsubsection{\texorpdfstring{solveILP()}{solveILP()}}
+{\footnotesize\ttfamily \label{algorithms_8cpp_aa6139b4baa2eebb510c807815b610dba} 
+\mbox{\hyperlink{struct_i_l_p_result}{ILPResult}} solve\+ILP (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Solves the knapsack problem using ILP via branch and bound. 
+
+Solves the knapsack problem using a custom ILP-\/style branch-\/and-\/bound method.
+
+Returns the best selection based on profit, pallet count, and total weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & List of pallets. \\
+\hline
+{\em capacity} & Truck capacity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_i_l_p_result}{ILPResult} containing selected pallets, total weight, and profit. 
+\end{DoxyReturn}
+\Hypertarget{algorithms_8cpp_a8e3f7d24ad76fc5801b43d1d4f3e7b2e}\index{algorithms.cpp@{algorithms.cpp}!validateILP@{validateILP}}
+\index{validateILP@{validateILP}!algorithms.cpp@{algorithms.cpp}}
+\doxysubsubsection{\texorpdfstring{validateILP()}{validateILP()}}
+{\footnotesize\ttfamily \label{algorithms_8cpp_a8e3f7d24ad76fc5801b43d1d4f3e7b2e} 
+void validate\+ILP (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_i_l_p_result}{ILPResult}} \&}]{result}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Validates and checks consistency of an ILP solution. 
+
+Recomputes profit and weight and compares with stored values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & ILP result to validate. \\
+\hline
+{\em pallets} & Pallets list used in original input. \\
+\hline
+{\em capacity} & Max allowed truck weight. \\
+\hline
+\end{DoxyParams}

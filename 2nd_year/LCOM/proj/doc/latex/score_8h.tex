@@ -1,0 +1,79 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/entities/score.h File Reference}
+\hypertarget{score_8h}{}\label{score_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/entities/score.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/entities/score.h}}
+
+
+Score management module for the game.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}../devices/i8042.\+h"{}}\newline
+{\ttfamily \#include "{}xpm/font.\+h"{}}\newline
+{\ttfamily \#include "{}xpm/pixmap.\+h"{}}\newline
+{\ttfamily \#include "{}../devices/video.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{score_8h_a11dc09b8f85fbabf2a6455384e9fe9d1}{inc\+\_\+score}} (uint32\+\_\+t points)
+\begin{DoxyCompactList}\small\item\em Increments the current score by a specified amount. \end{DoxyCompactList}\item 
+\Hypertarget{score_8h_aaf42193539144c0966542d7da8965c7b}\label{score_8h_aaf42193539144c0966542d7da8965c7b} 
+void {\bfseries reset\+\_\+score} ()
+\begin{DoxyCompactList}\small\item\em Resets the current score to zero. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{score_8h_a21ab19713d487f02e880ee4c3f730795}{get\+\_\+score}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current score. \end{DoxyCompactList}\item 
+\Hypertarget{score_8h_a857d6f4102b749efd96efad3012463d2}\label{score_8h_a857d6f4102b749efd96efad3012463d2} 
+void {\bfseries score\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Renders the score on screen using text and background graphics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{score_8h_abe902382ebcf927bbba5c0d47bf53138}\label{score_8h_abe902382ebcf927bbba5c0d47bf53138} 
+uint32\+\_\+t {\bfseries score}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Score management module for the game. 
+
+Provides functions for updating, resetting, retrieving, and drawing the game score. Also declares the global score variable used throughout the game.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{score_8h_a21ab19713d487f02e880ee4c3f730795}\index{score.h@{score.h}!get\_score@{get\_score}}
+\index{get\_score@{get\_score}!score.h@{score.h}}
+\doxysubsubsection{\texorpdfstring{get\_score()}{get\_score()}}
+{\footnotesize\ttfamily \label{score_8h_a21ab19713d487f02e880ee4c3f730795} 
+uint32\+\_\+t get\+\_\+score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current score. 
+
+\begin{DoxyReturn}{Returns}
+The current score as a 32-\/bit unsigned integer. 
+\end{DoxyReturn}
+\Hypertarget{score_8h_a11dc09b8f85fbabf2a6455384e9fe9d1}\index{score.h@{score.h}!inc\_score@{inc\_score}}
+\index{inc\_score@{inc\_score}!score.h@{score.h}}
+\doxysubsubsection{\texorpdfstring{inc\_score()}{inc\_score()}}
+{\footnotesize\ttfamily \label{score_8h_a11dc09b8f85fbabf2a6455384e9fe9d1} 
+void inc\+\_\+score (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{points}{}\end{DoxyParamCaption})}
+
+
+
+Increments the current score by a specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & The number of points to add (can be negative). \\
+\hline
+\end{DoxyParams}

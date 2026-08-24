@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['dec_0',['DEC',['../_c_make_c_compiler_id_8c.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC:&#160;CMakeCXXCompilerId.cpp']]],
+  ['dijkstrarestricted_1',['dijkstraRestricted',['../route_8cpp.html#a36e0030b3ac6a061d401e4d99ea0f081',1,'dijkstraRestricted(Graph &amp;g, const string &amp;source, const string &amp;dest, const set&lt; string &gt; &amp;avoidNodes, const set&lt; pair&lt; string, string &gt; &gt; &amp;avoidSegments):&#160;route.cpp'],['../route_8h.html#af3eb624493922ec1461a28d10b4bfa6a',1,'dijkstraRestricted(Graph &amp;g, const std::string &amp;source, const std::string &amp;dest, const std::set&lt; std::string &gt; &amp;avoidNodes, const std::set&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;avoidSegments):&#160;route.h']]],
+  ['dijkstrashortestpath_2',['dijkstraShortestPath',['../route_8cpp.html#ae37dade86abba5797389cba1125c268b',1,'dijkstraShortestPath(Graph &amp;g, const string &amp;source, const string &amp;dest):&#160;route.cpp'],['../route_8h.html#aa6324b1e298a3d9390c1ea1ca466907a',1,'dijkstraShortestPath(Graph &amp;g, const std::string &amp;source, const std::string &amp;dest):&#160;route.h']]],
+  ['drivingtime_3',['drivingTime',['../struct_edge_data.html#a221417619634aa421fbb604f9482a946',1,'EdgeData::drivingTime'],['../struct_edge.html#ad8735e8edb11d430dc8bf3f9c9905010',1,'Edge::drivingTime']]]
+];

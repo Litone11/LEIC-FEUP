@@ -1,0 +1,131 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/devices/\+KBC.h File Reference}
+\hypertarget{_k_b_c_8h}{}\label{_k_b_c_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/KBC.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/KBC.h}}
+
+
+Keyboard Controller (KBC) interface header for handling communication with the i8042 controller.  
+
+
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
+{\ttfamily \#include "{}i8042.\+h"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_k_b_c_8h_afa724eed52c0ff94cbc9b3f0149786ce}{kbc\+\_\+ih}} (void)
+\begin{DoxyCompactList}\small\item\em Keyboard interrupt handler. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_k_b_c_8h_a505885e4583b96e3a35a8d627b71a2f0}{read\+\_\+\+KBC\+\_\+status}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em To print the scancodes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_k_b_c_8h_a2b589c537edf227ac8f36baa49288919}{read\+\_\+\+KBC\+\_\+output}} (uint8\+\_\+t port, uint8\+\_\+t \texorpdfstring{$\ast$}{*}output, int mouse)
+\begin{DoxyCompactList}\small\item\em Reads data from the KBC output buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_k_b_c_8h_af2a97f3594075fabe628a884367e17de}{write\+\_\+\+KBC\+\_\+command}} (uint8\+\_\+t port, uint8\+\_\+t command\+Byte, int mouse)
+\begin{DoxyCompactList}\small\item\em Writes a command byte to the KBC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Keyboard Controller (KBC) interface header for handling communication with the i8042 controller. 
+
+Provides function declarations for reading and writing to the KBC, including interaction with both keyboard and mouse through the i8042 controller.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_k_b_c_8h_afa724eed52c0ff94cbc9b3f0149786ce}\index{KBC.h@{KBC.h}!kbc\_ih@{kbc\_ih}}
+\index{kbc\_ih@{kbc\_ih}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_ih()}{kbc\_ih()}}
+{\footnotesize\ttfamily \label{_k_b_c_8h_afa724eed52c0ff94cbc9b3f0149786ce} 
+void kbc\+\_\+ih (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Keyboard interrupt handler. 
+
+Reads the scancode from the KBC output buffer and stores it for further processing. \Hypertarget{_k_b_c_8h_a2b589c537edf227ac8f36baa49288919}\index{KBC.h@{KBC.h}!read\_KBC\_output@{read\_KBC\_output}}
+\index{read\_KBC\_output@{read\_KBC\_output}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{read\_KBC\_output()}{read\_KBC\_output()}}
+{\footnotesize\ttfamily \label{_k_b_c_8h_a2b589c537edf227ac8f36baa49288919} 
+int read\+\_\+\+KBC\+\_\+output (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{output}{, }\item[{int}]{mouse}{}\end{DoxyParamCaption})}
+
+
+
+Reads data from the KBC output buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to read from (usually 0x60). \\
+\hline
+{\em output} & Pointer to store the byte read. \\
+\hline
+{\em mouse} & Boolean flag indicating if the read is for the mouse (1) or keyboard (0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}
+\Hypertarget{_k_b_c_8h_a505885e4583b96e3a35a8d627b71a2f0}\index{KBC.h@{KBC.h}!read\_KBC\_status@{read\_KBC\_status}}
+\index{read\_KBC\_status@{read\_KBC\_status}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{read\_KBC\_status()}{read\_KBC\_status()}}
+{\footnotesize\ttfamily \label{_k_b_c_8h_a505885e4583b96e3a35a8d627b71a2f0} 
+int read\+\_\+\+KBC\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{status}{}\end{DoxyParamCaption})}
+
+
+
+To print the scancodes. 
+
+Prints the scancodes via printf Provided via the LCF -- no need to implement it
+
+
+\begin{DoxyParams}{Parameters}
+{\em make} & Whether this is a make or a break code \\
+\hline
+{\em size} & Size in bytes of the scancode \\
+\hline
+{\em bytes} & Array with size elements, with the scancode bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise
+\end{DoxyReturn}
+Reads the status register from the KBC.
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Pointer to store the status byte read from the KBC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}
+\Hypertarget{_k_b_c_8h_af2a97f3594075fabe628a884367e17de}\index{KBC.h@{KBC.h}!write\_KBC\_command@{write\_KBC\_command}}
+\index{write\_KBC\_command@{write\_KBC\_command}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{write\_KBC\_command()}{write\_KBC\_command()}}
+{\footnotesize\ttfamily \label{_k_b_c_8h_af2a97f3594075fabe628a884367e17de} 
+int write\+\_\+\+KBC\+\_\+command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port}{, }\item[{uint8\+\_\+t}]{command\+Byte}{, }\item[{int}]{mouse}{}\end{DoxyParamCaption})}
+
+
+
+Writes a command byte to the KBC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to write to (usually 0x64 for commands). \\
+\hline
+{\em command\+Byte} & The command byte to write. \\
+\hline
+{\em mouse} & Boolean flag indicating if the command is for the mouse (1) or keyboard (0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero otherwise. 
+\end{DoxyReturn}

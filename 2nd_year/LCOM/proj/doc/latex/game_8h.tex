@@ -1,0 +1,91 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/game/game.h File Reference}
+\hypertarget{game_8h}{}\label{game_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/game.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/game.h}}
+
+
+Game state controller and main loop handler.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}devices/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}menu\+\_\+state.\+h"{}}\newline
+{\ttfamily \#include "{}info\+\_\+state.\+h"{}}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+{\ttfamily \#include "{}devices/video.\+h"{}}\newline
+{\ttfamily \#include "{}entities/entities.\+h"{}}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_8h_a2185b55f783b76da98f60ddfedae594d}\label{game_8h_a2185b55f783b76da98f60ddfedae594d} 
+typedef enum \mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} {\bfseries Game\+State}
+\begin{DoxyCompactList}\small\item\em Enum representing the current state of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \{ \mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a8211ee7ceda72b3c0e9b4a547acb471b}{STATE\+\_\+\+MENU}}
+, \mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a392a3e1d0cf9864dad33ceea6099431a}{STATE\+\_\+\+INFO}}
+, \mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285af8f1d4013be7a14c51495005d39e7c0e}{STATE\+\_\+\+PLAYING}}
+, \mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a6a14bcf2a972a6b9e3d4459512082c26}{STATE\+\_\+\+EXIT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the current state of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_8h_a5f5ccbe5abfdef24c8378dc3cf32ffb3}\label{game_8h_a5f5ccbe5abfdef24c8378dc3cf32ffb3} 
+void {\bfseries game\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initializes game components and sets initial game state. \end{DoxyCompactList}\item 
+\Hypertarget{game_8h_ac5254959a1940bb1fdaa4d884da8115d}\label{game_8h_ac5254959a1940bb1fdaa4d884da8115d} 
+void {\bfseries game\+\_\+update} ()
+\begin{DoxyCompactList}\small\item\em Updates game logic based on the current state (menu, info, playing, exit). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{game_8h_a6ed9079283c2964b8f1c5bfccfc8727e}\label{game_8h_a6ed9079283c2964b8f1c5bfccfc8727e} 
+\mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} {\bfseries current\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Global variable tracking the current game state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game state controller and main loop handler. 
+
+Declares the \doxylink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State} enum and core functions for initializing and updating the main game logic, including transitions between menu, info, playing, and exit states. Used to manage the high-\/level game flow and central control loop.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}\index{game.h@{game.h}!GameState@{GameState}}
+\index{GameState@{GameState}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameState}{GameState}}
+{\footnotesize\ttfamily \label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285} 
+enum \mbox{\hyperlink{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}}}
+
+
+
+Enum representing the current state of the game. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_MENU@{STATE\_MENU}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_MENU@{STATE\_MENU}}}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a8211ee7ceda72b3c0e9b4a547acb471b}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a8211ee7ceda72b3c0e9b4a547acb471b} 
+STATE\+\_\+\+MENU&Menu state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_INFO@{STATE\_INFO}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_INFO@{STATE\_INFO}}}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a392a3e1d0cf9864dad33ceea6099431a}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a392a3e1d0cf9864dad33ceea6099431a} 
+STATE\+\_\+\+INFO&Info screen state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_PLAYING@{STATE\_PLAYING}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_PLAYING@{STATE\_PLAYING}}}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285af8f1d4013be7a14c51495005d39e7c0e}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285af8f1d4013be7a14c51495005d39e7c0e} 
+STATE\+\_\+\+PLAYING&Main gameplay state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_EXIT@{STATE\_EXIT}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_EXIT@{STATE\_EXIT}}}\Hypertarget{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a6a14bcf2a972a6b9e3d4459512082c26}\label{game_8h_a7899b65f1ea0f655e4bbf8d2a5714285a6a14bcf2a972a6b9e3d4459512082c26} 
+STATE\+\_\+\+EXIT&Exit state \\
+\hline
+
+\end{DoxyEnumFields}

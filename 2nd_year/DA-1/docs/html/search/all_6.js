@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['findalternativeroute_0',['findAlternativeRoute',['../route_8cpp.html#abced3b4249e365a2a13b257024740052',1,'findAlternativeRoute(Graph &amp;g, const string &amp;source, const string &amp;dest, const vector&lt; string &gt; &amp;mainPath):&#160;route.cpp'],['../route_8h.html#acf8ed5dd651cfbc445106287a52aa2d5',1,'findAlternativeRoute(Graph &amp;g, const std::string &amp;source, const std::string &amp;dest, const std::vector&lt; std::string &gt; &amp;mainPath):&#160;route.h']]],
+  ['findecoroute_1',['findEcoRoute',['../route_8cpp.html#ac41454ac8142ae24cb842520ee811523',1,'findEcoRoute(Graph &amp;g, const string &amp;source, const string &amp;dest, int maxWalkTime, const set&lt; string &gt; &amp;avoidNodes, const set&lt; pair&lt; string, string &gt; &gt; &amp;avoidSegments, string &amp;message):&#160;route.cpp'],['../route_8h.html#a512f91cd6ccc5dde0ce7b179112e9f30',1,'findEcoRoute(Graph &amp;g, const std::string &amp;source, const std::string &amp;dest, int maxWalkTime, const std::set&lt; std::string &gt; &amp;avoidNodes, const std::set&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;avoidSegments, std::string &amp;message):&#160;route.h']]],
+  ['from_2',['from',['../struct_edge.html#a1019cd3ef6fb28434ef49d9aa7949929',1,'Edge']]]
+];

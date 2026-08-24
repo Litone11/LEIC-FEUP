@@ -1,0 +1,127 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/untitled5/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{/Users/luismartins/CLionProjects/untitled5/main.cpp@{/Users/luismartins/CLionProjects/untitled5/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+{\ttfamily \#include "{}route.\+h"{}}\newline
+{\ttfamily \#include "{}graph.\+h"{}}\newline
+{\ttfamily \#include "{}batch.\+h"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a547646815560a705ed2ab461dbf46d04}{show\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu options for the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a1c47c40c20f74130ff8b57d49411c678}{handle\+Option}} (int option)
+\begin{DoxyCompactList}\small\item\em Processes the selected option from the main menu. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Entry point of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \mbox{\hyperlink{main_8cpp_a0c8064fe36748c645a94c0044c15e467}{locations}}
+\begin{DoxyCompactList}\small\item\em Stores the locations loaded from the CSV file. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ \mbox{\hyperlink{main_8cpp_a3a89b0ba7c9ac669fa6c113ed63f60be}{edges}}
+\begin{DoxyCompactList}\small\item\em Stores the edges loaded from the CSV file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graph}{Graph}} \mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}
+\begin{DoxyCompactList}\small\item\em Main graph instance used for route calculations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a1c47c40c20f74130ff8b57d49411c678}\index{main.cpp@{main.cpp}!handleOption@{handleOption}}
+\index{handleOption@{handleOption}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{handleOption()}{handleOption()}}
+{\footnotesize\ttfamily \label{main_8cpp_a1c47c40c20f74130ff8b57d49411c678} 
+void handle\+Option (\begin{DoxyParamCaption}\item[{int}]{option}{}\end{DoxyParamCaption})}
+
+
+
+Processes the selected option from the main menu. 
+
+Based on the user\textquotesingle{}s input, this function calls the appropriate route calculation function or exits the application.
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & The menu option selected by the user.
+\begin{DoxyItemize}
+\item 1\+: Calculate the fastest route.
+\item 2\+: Calculate an independent second-\/fastest route.
+\item 3\+: Calculate a route with restricted nodes/segments.
+\item 4\+: Calculate an eco-\/friendly route.
+\item 5\+: Execute batch processing from input.\+txt.
+\item 6\+: Exit the application.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of menu options, as it involves checking the selected option and performing corresponding actions. 
+\end{DoxyNote}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Entry point of the program. 
+
+Loads location and edge data from CSV files, initializes the graph, and enters the main menu loop where the user can choose an option.
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 upon successful execution.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n), where n is the number of locations and edges, as it involves parsing the CSV files and building the graph. 
+\end{DoxyNote}
+\Hypertarget{main_8cpp_a547646815560a705ed2ab461dbf46d04}\index{main.cpp@{main.cpp}!showMainMenu@{showMainMenu}}
+\index{showMainMenu@{showMainMenu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{showMainMenu()}{showMainMenu()}}
+{\footnotesize\ttfamily \label{main_8cpp_a547646815560a705ed2ab461dbf46d04} 
+void show\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the main menu options for the user. 
+
+This function prints the available options, allowing the user to select different types of route calculations or batch processing.
+
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(1), as printing the menu is a constant-\/time operation. 
+\end{DoxyNote}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a3a89b0ba7c9ac669fa6c113ed63f60be}\index{main.cpp@{main.cpp}!edges@{edges}}
+\index{edges@{edges}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{edges}{edges}}
+{\footnotesize\ttfamily \label{main_8cpp_a3a89b0ba7c9ac669fa6c113ed63f60be} 
+vector$<$\mbox{\hyperlink{struct_edge}{Edge}}$>$ edges}
+
+
+
+Stores the edges loaded from the CSV file. 
+
+Each edge represents a connection between two locations, including driving and walking time. \Hypertarget{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}\index{main.cpp@{main.cpp}!g@{g}}
+\index{g@{g}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily \label{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df} 
+\mbox{\hyperlink{class_graph}{Graph}} g}
+
+
+
+Main graph instance used for route calculations. 
+
+This graph is built using the loaded locations and edges. \Hypertarget{main_8cpp_a0c8064fe36748c645a94c0044c15e467}\index{main.cpp@{main.cpp}!locations@{locations}}
+\index{locations@{locations}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{locations}{locations}}
+{\footnotesize\ttfamily \label{main_8cpp_a0c8064fe36748c645a94c0044c15e467} 
+vector$<$\mbox{\hyperlink{struct_location}{Location}}$>$ locations}
+
+
+
+Stores the locations loaded from the CSV file. 
+
+Processes a batch file containing various routing operations.
+
+Each location represents a node in the graph. 

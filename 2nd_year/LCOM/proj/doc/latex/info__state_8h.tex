@@ -1,0 +1,56 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/game/info\+\_\+state.h File Reference}
+\hypertarget{info__state_8h}{}\label{info__state_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/info\_state.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/game/info\_state.h}}
+
+
+Handles the "{}\+Info"{} state of the game, displaying information screen.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}devices/keyboard.\+h"{}}\newline
+{\ttfamily \#include "{}devices/video.\+h"{}}\newline
+{\ttfamily \#include "{}xpm/pixmap.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{info__state_8h_adae1616b144d00b62fc0e49cce2aa49d}\label{info__state_8h_adae1616b144d00b62fc0e49cce2aa49d} 
+void {\bfseries info\+\_\+state\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the info state (flags, state tracking). \end{DoxyCompactList}\item 
+\Hypertarget{info__state_8h_a846e383796688537094cae257873c7d5}\label{info__state_8h_a846e383796688537094cae257873c7d5} 
+void {\bfseries info\+\_\+state\+\_\+update} ()
+\begin{DoxyCompactList}\small\item\em Updates the info state, e.\+g., checks for ESC to exit. \end{DoxyCompactList}\item 
+\Hypertarget{info__state_8h_a3fe5edd0f1c7dfde12fee6f7d7c30c70}\label{info__state_8h_a3fe5edd0f1c7dfde12fee6f7d7c30c70} 
+void {\bfseries info\+\_\+state\+\_\+draw} ()
+\begin{DoxyCompactList}\small\item\em Draws the info screen including background, title, and content. \end{DoxyCompactList}\item 
+\Hypertarget{info__state_8h_af8fb2c547ef3c5ac36795c41e31f98a0}\label{info__state_8h_af8fb2c547ef3c5ac36795c41e31f98a0} 
+void {\bfseries info\+\_\+state\+\_\+start} ()
+\begin{DoxyCompactList}\small\item\em Starts the info state by initializing and drawing it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{info__state_8h_aa1de7a5557e9d96b83cf03f73c92163f}\label{info__state_8h_aa1de7a5557e9d96b83cf03f73c92163f} 
+uint8\+\_\+t {\bfseries scancode}
+\begin{DoxyCompactList}\small\item\em Latest scancode read from the keyboard interrupt handler. \end{DoxyCompactList}\item 
+\Hypertarget{info__state_8h_a0fdfd5e75d81d3b1b3165ae2287458a9}\label{info__state_8h_a0fdfd5e75d81d3b1b3165ae2287458a9} 
+bool {\bfseries start\+\_\+game}
+\item 
+\Hypertarget{info__state_8h_accff237892d192ff512d54bd8e118601}\label{info__state_8h_accff237892d192ff512d54bd8e118601} 
+bool {\bfseries exit\+\_\+game}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the "{}\+Info"{} state of the game, displaying information screen. 
+
+Declares functions to initialize, update, draw, and start the information screen state, shown between gameplay and menu transitions.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}

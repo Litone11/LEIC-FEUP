@@ -1,0 +1,103 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/\+DAproj2/reader.h File Reference}
+\hypertarget{reader_8h}{}\label{reader_8h}\index{/Users/luismartins/CLionProjects/DAproj2/reader.h@{/Users/luismartins/CLionProjects/DAproj2/reader.h}}
+
+
+Function declarations for reading truck and pallet data from CSV files.  
+
+
+{\ttfamily \#include "{}Pallet.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{reader_8h_a3080607ecbd910ebae24a76d5bb92c6b}{load\+Truck\+Data}} (const std\+::string \&filename, int \&capacity, int \&num\+Pallets)
+\begin{DoxyCompactList}\small\item\em Loads truck capacity and pallet count from a CSV file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{reader_8h_aa920b3aa087531733d202275840100ca}{load\+Pallets}} (const std\+::string \&filename, std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Loads pallet data from a CSV file into a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Function declarations for reading truck and pallet data from CSV files. 
+
+Declares functions to load truck capacity and pallet information for use in knapsack problem algorithms.
+
+\begin{DoxyAuthor}{Author}
+Luís Martins e João Taveira 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/05-\/20 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{reader_8h_aa920b3aa087531733d202275840100ca}\index{reader.h@{reader.h}!loadPallets@{loadPallets}}
+\index{loadPallets@{loadPallets}!reader.h@{reader.h}}
+\doxysubsubsection{\texorpdfstring{loadPallets()}{loadPallets()}}
+{\footnotesize\ttfamily \label{reader_8h_aa920b3aa087531733d202275840100ca} 
+bool load\+Pallets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Loads pallet data from a CSV file into a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the pallets CSV file. \\
+\hline
+{\em pallets} & Reference to vector to store loaded pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is successfully read, false otherwise.
+\end{DoxyReturn}
+Loads pallet data from a CSV file into a vector.
+
+Parses each line of the file to extract pallet ID, weight, and profit, and stores the data in the given vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the pallets data CSV file. \\
+\hline
+{\em pallets} & Reference to a vector where the parsed pallets will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is successfully read, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{reader_8h_a3080607ecbd910ebae24a76d5bb92c6b}\index{reader.h@{reader.h}!loadTruckData@{loadTruckData}}
+\index{loadTruckData@{loadTruckData}!reader.h@{reader.h}}
+\doxysubsubsection{\texorpdfstring{loadTruckData()}{loadTruckData()}}
+{\footnotesize\ttfamily \label{reader_8h_a3080607ecbd910ebae24a76d5bb92c6b} 
+bool load\+Truck\+Data (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{int \&}]{capacity}{, }\item[{int \&}]{num\+Pallets}{}\end{DoxyParamCaption})}
+
+
+
+Loads truck capacity and pallet count from a CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the truck CSV file. \\
+\hline
+{\em capacity} & Reference to store truck capacity. \\
+\hline
+{\em num\+Pallets} & Reference to store number of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is successfully read, false otherwise.
+\end{DoxyReturn}
+Reads the second line of the file and parses the capacity and number of pallets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the truck data CSV file. \\
+\hline
+{\em capacity} & Reference to store the truck\textquotesingle{}s capacity. \\
+\hline
+{\em num\+Pallets} & Reference to store the number of pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is successfully read, false otherwise. 
+\end{DoxyReturn}

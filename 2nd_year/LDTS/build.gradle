@@ -1,0 +1,46 @@
+ plugins {
+     id 'java'
+     id 'application'
+     id 'groovy'
+     id "org.kordamp.gradle.errorprone" version "0.53.0"
+     id 'info.solidsoft.pitest' version '1.15.0'
+     id "net.ltgt.errorprone" version "4.1.0"
+ }
+
+group = 'Space_Invaders'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.googlecode.lanterna:lanterna:3.1.1'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.mockito:mockito-inline:3.12.4'
+    testImplementation 'junit:junit:4.13.1'
+    errorprone "com.google.errorprone:error_prone_core:2.30.0"
+
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+pitest {
+    junit5PluginVersion = '1.00.0'
+}
+
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}

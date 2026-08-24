@@ -1,0 +1,38 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/untitled5/parser.h}
+\hypertarget{parser_8h_source}{}\label{parser_8h_source}\mbox{\hyperlink{parser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_location}{Location}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_location_a0ae46c7127ec349e484ed075c91ba258}{name}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_location_ae9a0c3ce4a3ed146e2a70630dd8f07d0}{id}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_location_a61d0d75d770cedb310772ab52a11fa1d}{code}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_location_a598086b9f35ac68ec01079b132475e3b}{hasParking}};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_edge}{Edge}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_edge_a1019cd3ef6fb28434ef49d9aa7949929}{from}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_edge_ac8c47e31d5e8295de86611833986bd8a}{to}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_edge_ad8735e8edb11d430dc8bf3f9c9905010}{drivingTime}};\ \ \ \textcolor{comment}{//\ -\/1\ se\ não\ for\ possível\ conduzir}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_edge_a8ad2188a090eba839334279cdd55c73f}{walkingTime}};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00046\ vector<Location>\ \mbox{\hyperlink{parser_8h_a7145ffaf1f00013bb353ca6ffad69b66}{parseLocations}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ filename);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00058\ vector<Edge>\ \mbox{\hyperlink{parser_8h_aca545d8b008e77f3a78d78c0020e98f5}{parseDistances}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ filename);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{parser_8h_a92ce917ad9126e93a2c9f2c4565b6160}{getCodeById}}(\textcolor{keyword}{const}\ vector<Location>\&\ \mbox{\hyperlink{batch_8cpp_a0c8064fe36748c645a94c0044c15e467}{locations}},\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{parser_8h_aa925777c0354080209b18e0834117a67}{getIdByCode}}(\textcolor{keyword}{const}\ vector<Location>\&\ \mbox{\hyperlink{batch_8cpp_a0c8064fe36748c645a94c0044c15e467}{locations}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ code);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{parser_8h_a2380530bf87674a2614023ea4b2dd14a}{cleanCode}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ code);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

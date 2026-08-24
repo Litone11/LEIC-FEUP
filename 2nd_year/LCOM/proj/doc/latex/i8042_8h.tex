@@ -1,0 +1,244 @@
+\doxysection{/\+Users/luismartins/\+Documents/\+LCOM/\+MINIX-\/\+LCOM 2/shared/proj/src/devices/i8042.h File Reference}
+\hypertarget{i8042_8h}{}\label{i8042_8h}\index{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/i8042.h@{/Users/luismartins/Documents/LCOM/MINIX-\/LCOM 2/shared/proj/src/devices/i8042.h}}
+
+
+Constants for the i8042 keyboard and mouse controller.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{i8042_8h_a98427b1c078d8d7369ebc6e3c0f8dae0}\label{i8042_8h_a98427b1c078d8d7369ebc6e3c0f8dae0} 
+\#define {\bfseries IRQ\+\_\+\+KBC}~1
+\item 
+\Hypertarget{i8042_8h_a32ffe73ffc337fbec467ea02948591af}\label{i8042_8h_a32ffe73ffc337fbec467ea02948591af} 
+\#define {\bfseries IRQ\+\_\+\+MOUSE}~12
+\item 
+\Hypertarget{i8042_8h_a5573533027e427e3a11b4daa75621598}\label{i8042_8h_a5573533027e427e3a11b4daa75621598} 
+\#define {\bfseries MAKE\+\_\+\+CODE}~BIT(7)
+\item 
+\Hypertarget{i8042_8h_ab427e6926fcc47eb1c02c1f78162b6f6}\label{i8042_8h_ab427e6926fcc47eb1c02c1f78162b6f6} 
+\#define {\bfseries TWO\+\_\+\+BYTES}~0x\+E0
+\item 
+\Hypertarget{i8042_8h_aefc48d416c882f06edaf6d01779d4d74}\label{i8042_8h_aefc48d416c882f06edaf6d01779d4d74} 
+\#define {\bfseries TIMEOUT\+\_\+\+ERROR}~BIT(6)
+\item 
+\Hypertarget{i8042_8h_a81d2ca6759f3f3bf04556b7558aea6bc}\label{i8042_8h_a81d2ca6759f3f3bf04556b7558aea6bc} 
+\#define {\bfseries PARITY\+\_\+\+ERROR}~BIT(7)
+\item 
+\Hypertarget{i8042_8h_a10313c9dfee4ce9cb293f84b50d14889}\label{i8042_8h_a10313c9dfee4ce9cb293f84b50d14889} 
+\#define {\bfseries FULL\+\_\+\+OUT\+\_\+\+BUFFER}~BIT(0)
+\item 
+\Hypertarget{i8042_8h_a7eb083dcc1b2aecf91bd8c9108e17b37}\label{i8042_8h_a7eb083dcc1b2aecf91bd8c9108e17b37} 
+\#define {\bfseries FULL\+\_\+\+IN\+\_\+\+BUFFER}~BIT(1)
+\item 
+\Hypertarget{i8042_8h_a0b4e336aad52f96e65dd212f76675d8d}\label{i8042_8h_a0b4e336aad52f96e65dd212f76675d8d} 
+\#define {\bfseries KBC\+\_\+\+STATUS\+\_\+\+REG}~0x64
+\item 
+\Hypertarget{i8042_8h_a445f67cfdfb7046efc77f7df5d9835e2}\label{i8042_8h_a445f67cfdfb7046efc77f7df5d9835e2} 
+\#define {\bfseries KBC\+\_\+\+IN\+\_\+\+CMD}~0x64
+\item 
+\Hypertarget{i8042_8h_ade9c0b4f31cee479afed8b824fff02a0}\label{i8042_8h_ade9c0b4f31cee479afed8b824fff02a0} 
+\#define {\bfseries KBC\+\_\+\+OUT\+\_\+\+CMD}~0x60
+\item 
+\Hypertarget{i8042_8h_a595a5cad2d3c793963da50865b2c1b47}\label{i8042_8h_a595a5cad2d3c793963da50865b2c1b47} 
+\#define {\bfseries KBC\+\_\+\+READ\+\_\+\+CMD}~0x20
+\item 
+\Hypertarget{i8042_8h_aaa62a6987753a109d2f7a609ce8b7334}\label{i8042_8h_aaa62a6987753a109d2f7a609ce8b7334} 
+\#define {\bfseries KBC\+\_\+\+WRITE\+\_\+\+CMD}~0x60
+\item 
+\Hypertarget{i8042_8h_a34326f1c6bfccd8b9084c5ae2b4918a1}\label{i8042_8h_a34326f1c6bfccd8b9084c5ae2b4918a1} 
+\#define {\bfseries ENABLE\+\_\+\+INT}~BIT(0)
+\item 
+\Hypertarget{i8042_8h_a49b547c547cb646d98c51e0b0bb2588a}\label{i8042_8h_a49b547c547cb646d98c51e0b0bb2588a} 
+\#define {\bfseries MOUSE\+\_\+\+TICK}~BIT(5)
+\item 
+\Hypertarget{i8042_8h_a794d7c5cd970fe3c03741d420c96050a}\label{i8042_8h_a794d7c5cd970fe3c03741d420c96050a} 
+\#define {\bfseries MOUSE\+\_\+\+SYNC}~BIT(3)
+\item 
+\Hypertarget{i8042_8h_ad09bbbc7bbd10f697db046f6d0cc3f6e}\label{i8042_8h_ad09bbbc7bbd10f697db046f6d0cc3f6e} 
+\#define {\bfseries MOUSE\+\_\+\+IN}~0x\+D4
+\item 
+\Hypertarget{i8042_8h_a064ec583ce5b039303686ce4c64b4f3e}\label{i8042_8h_a064ec583ce5b039303686ce4c64b4f3e} 
+\#define {\bfseries MOUSE\+\_\+\+ACK}~0x\+FA
+\item 
+\Hypertarget{i8042_8h_aef4a299dedf83b6dc4765baab230affd}\label{i8042_8h_aef4a299dedf83b6dc4765baab230affd} 
+\#define {\bfseries MOUSE\+\_\+\+NACK}~0x\+FE
+\item 
+\Hypertarget{i8042_8h_a75ebb9e8d0615febfa6c7c96ad48a38b}\label{i8042_8h_a75ebb9e8d0615febfa6c7c96ad48a38b} 
+\#define {\bfseries MOUSE\+\_\+\+ERROR}~0x\+FC
+\item 
+\Hypertarget{i8042_8h_a81c0f94add844b0761bd142f7f708431}\label{i8042_8h_a81c0f94add844b0761bd142f7f708431} 
+\#define {\bfseries MOUSE\+\_\+\+LB}~BIT(0)
+\item 
+\Hypertarget{i8042_8h_a5f47c1d60579c8691054c939c1d7c20e}\label{i8042_8h_a5f47c1d60579c8691054c939c1d7c20e} 
+\#define {\bfseries MOUSE\+\_\+\+RB}~BIT(1)
+\item 
+\Hypertarget{i8042_8h_a5a934eaadd3536aabe6df0adf6728e8e}\label{i8042_8h_a5a934eaadd3536aabe6df0adf6728e8e} 
+\#define {\bfseries MOUSE\+\_\+\+MB}~BIT(2)
+\item 
+\Hypertarget{i8042_8h_a21b57727e5ecc7456b2017ec629a4cf5}\label{i8042_8h_a21b57727e5ecc7456b2017ec629a4cf5} 
+\#define {\bfseries MOUSE\+\_\+\+X\+\_\+\+DELTA}~BIT(4)
+\item 
+\Hypertarget{i8042_8h_a8630bdfa4e872f18dc4943f466e60f97}\label{i8042_8h_a8630bdfa4e872f18dc4943f466e60f97} 
+\#define {\bfseries MOUSE\+\_\+\+Y\+\_\+\+DELTA}~BIT(5)
+\item 
+\Hypertarget{i8042_8h_a726368c7d58dac5edc608a58e2e92660}\label{i8042_8h_a726368c7d58dac5edc608a58e2e92660} 
+\#define {\bfseries MOUSE\+\_\+\+X\+\_\+\+SIGNAL}~BIT(6)
+\item 
+\Hypertarget{i8042_8h_a4b664cf12fa3048513e4c8b856aefd65}\label{i8042_8h_a4b664cf12fa3048513e4c8b856aefd65} 
+\#define {\bfseries MOUSE\+\_\+\+Y\+\_\+\+SIGNAL}~BIT(7)
+\item 
+\Hypertarget{i8042_8h_aa554763d6a066605edecacdea834da9b}\label{i8042_8h_aa554763d6a066605edecacdea834da9b} 
+\#define {\bfseries WAIT\+\_\+\+KBC}~20000
+\item 
+\Hypertarget{i8042_8h_a8ca6d466a780b24900c3e94a5798230f}\label{i8042_8h_a8ca6d466a780b24900c3e94a5798230f} 
+\#define {\bfseries MAX\+\_\+\+ATTEMPS}~10
+\item 
+\Hypertarget{i8042_8h_a0df4fbf54d7714c0f1c5efcc4f6d99a9}\label{i8042_8h_a0df4fbf54d7714c0f1c5efcc4f6d99a9} 
+\#define {\bfseries MAKE\+\_\+\+ESC}~0x01
+\item 
+\Hypertarget{i8042_8h_a82218ef5fdf988f42e5056a0da2f9fb5}\label{i8042_8h_a82218ef5fdf988f42e5056a0da2f9fb5} 
+\#define {\bfseries BREAK\+\_\+\+ESC}~0x81
+\item 
+\Hypertarget{i8042_8h_a6ef830375be126391a1a52952027aa74}\label{i8042_8h_a6ef830375be126391a1a52952027aa74} 
+\#define {\bfseries MAKE\+\_\+\+ENTER}~0x1C
+\item 
+\Hypertarget{i8042_8h_a52da4075f83e9f5c454b4610a26aac07}\label{i8042_8h_a52da4075f83e9f5c454b4610a26aac07} 
+\#define {\bfseries BREAK\+\_\+\+ENTER}~0x9C
+\item 
+\Hypertarget{i8042_8h_acb56d92624362142787722f1d082730f}\label{i8042_8h_acb56d92624362142787722f1d082730f} 
+\#define {\bfseries MAKE\+\_\+\+MINUS}~0x0C
+\item 
+\Hypertarget{i8042_8h_a69f4a4a7fe4a407248f95583f0b0d235}\label{i8042_8h_a69f4a4a7fe4a407248f95583f0b0d235} 
+\#define {\bfseries MAKE\+\_\+\+PLUS}~0x0D
+\item 
+\Hypertarget{i8042_8h_ab20bc5a01e41da2f86c21fe9157098fa}\label{i8042_8h_ab20bc5a01e41da2f86c21fe9157098fa} 
+\#define {\bfseries MAKE\+\_\+\+BACKSPACE}~0x0E
+\item 
+\Hypertarget{i8042_8h_a7323faa8df8d0eaaa2f295a10b47b734}\label{i8042_8h_a7323faa8df8d0eaaa2f295a10b47b734} 
+\#define {\bfseries MAKE\+\_\+1}~0x02
+\item 
+\Hypertarget{i8042_8h_abc760bcfe107799691af0a7cfb81c953}\label{i8042_8h_abc760bcfe107799691af0a7cfb81c953} 
+\#define {\bfseries MAKE\+\_\+2}~0x03
+\item 
+\Hypertarget{i8042_8h_a0805594367f24340777dd681d19dbb5c}\label{i8042_8h_a0805594367f24340777dd681d19dbb5c} 
+\#define {\bfseries MAKE\+\_\+3}~0x04
+\item 
+\Hypertarget{i8042_8h_a1ebbf01191ac9c60bb5f603dacf3a2f5}\label{i8042_8h_a1ebbf01191ac9c60bb5f603dacf3a2f5} 
+\#define {\bfseries MAKE\+\_\+4}~0x05
+\item 
+\Hypertarget{i8042_8h_af49eed0503f02d6e60b0a06d48505010}\label{i8042_8h_af49eed0503f02d6e60b0a06d48505010} 
+\#define {\bfseries MAKE\+\_\+5}~0x06
+\item 
+\Hypertarget{i8042_8h_a23384029eebae66d47618f63a43cf163}\label{i8042_8h_a23384029eebae66d47618f63a43cf163} 
+\#define {\bfseries MAKE\+\_\+6}~0x07
+\item 
+\Hypertarget{i8042_8h_a53ce7d1f424b6da7bb9b0d4cfbf9e864}\label{i8042_8h_a53ce7d1f424b6da7bb9b0d4cfbf9e864} 
+\#define {\bfseries MAKE\+\_\+7}~0x08
+\item 
+\Hypertarget{i8042_8h_a759978bebd7881249be145f8a1280444}\label{i8042_8h_a759978bebd7881249be145f8a1280444} 
+\#define {\bfseries MAKE\+\_\+8}~0x09
+\item 
+\Hypertarget{i8042_8h_aa149c92af302f5d9e72a44f335d00ce0}\label{i8042_8h_aa149c92af302f5d9e72a44f335d00ce0} 
+\#define {\bfseries MAKE\+\_\+A}~0x1E
+\item 
+\Hypertarget{i8042_8h_a40d84adf5117e12dfc25116c611faaab}\label{i8042_8h_a40d84adf5117e12dfc25116c611faaab} 
+\#define {\bfseries MAKE\+\_\+B}~0x30
+\item 
+\Hypertarget{i8042_8h_a93787676cd8160ca81750c35ddeb0c90}\label{i8042_8h_a93787676cd8160ca81750c35ddeb0c90} 
+\#define {\bfseries MAKE\+\_\+C}~0x2E
+\item 
+\Hypertarget{i8042_8h_a126db2c2ecef7c6abe8a14a8a347d3a9}\label{i8042_8h_a126db2c2ecef7c6abe8a14a8a347d3a9} 
+\#define {\bfseries MAKE\+\_\+D}~0x20
+\item 
+\Hypertarget{i8042_8h_aa586914a396a5dda5e750c74a2ba3454}\label{i8042_8h_aa586914a396a5dda5e750c74a2ba3454} 
+\#define {\bfseries MAKE\+\_\+E}~0x12
+\item 
+\Hypertarget{i8042_8h_aa2c7dafd74f62e6c7cced3996ee01f16}\label{i8042_8h_aa2c7dafd74f62e6c7cced3996ee01f16} 
+\#define {\bfseries MAKE\+\_\+F}~0x21
+\item 
+\Hypertarget{i8042_8h_a8dfd132f3743fb140eb08f65eb81b934}\label{i8042_8h_a8dfd132f3743fb140eb08f65eb81b934} 
+\#define {\bfseries MAKE\+\_\+G}~0x22
+\item 
+\Hypertarget{i8042_8h_aa8a5ab68e938309e46c30abc78d35148}\label{i8042_8h_aa8a5ab68e938309e46c30abc78d35148} 
+\#define {\bfseries MAKE\+\_\+H}~0x23
+\item 
+\Hypertarget{i8042_8h_af35869cca53bfece85b39e6ca0809eaf}\label{i8042_8h_af35869cca53bfece85b39e6ca0809eaf} 
+\#define {\bfseries MAKE\+\_\+I}~0x17
+\item 
+\Hypertarget{i8042_8h_ac9c83331cb776560c542015285c43500}\label{i8042_8h_ac9c83331cb776560c542015285c43500} 
+\#define {\bfseries MAKE\+\_\+J}~0x24
+\item 
+\Hypertarget{i8042_8h_a79385903f2d30e334f038f10e40bbd82}\label{i8042_8h_a79385903f2d30e334f038f10e40bbd82} 
+\#define {\bfseries MAKE\+\_\+K}~0x25
+\item 
+\Hypertarget{i8042_8h_adbf71b0e13b45d46db2f169718147d70}\label{i8042_8h_adbf71b0e13b45d46db2f169718147d70} 
+\#define {\bfseries MAKE\+\_\+L}~0x26
+\item 
+\Hypertarget{i8042_8h_a7be3143fb6e226e23cdffe9c9f7346a2}\label{i8042_8h_a7be3143fb6e226e23cdffe9c9f7346a2} 
+\#define {\bfseries MAKE\+\_\+M}~0x32
+\item 
+\Hypertarget{i8042_8h_a2844ab00a7186deaf55feb8c2d7bc61f}\label{i8042_8h_a2844ab00a7186deaf55feb8c2d7bc61f} 
+\#define {\bfseries MAKE\+\_\+N}~0x31
+\item 
+\Hypertarget{i8042_8h_a4cd2f955afad039e9ebcbb1a066ef833}\label{i8042_8h_a4cd2f955afad039e9ebcbb1a066ef833} 
+\#define {\bfseries MAKE\+\_\+O}~0x18
+\item 
+\Hypertarget{i8042_8h_a6f4b2baf27cbca540f54e63677fb63ca}\label{i8042_8h_a6f4b2baf27cbca540f54e63677fb63ca} 
+\#define {\bfseries MAKE\+\_\+P}~0x19
+\item 
+\Hypertarget{i8042_8h_a9b4d1ceec06604523939db69d45374f7}\label{i8042_8h_a9b4d1ceec06604523939db69d45374f7} 
+\#define {\bfseries MAKE\+\_\+Q}~0x10
+\item 
+\Hypertarget{i8042_8h_a0d2642e1448d279d4c72995f7b39e158}\label{i8042_8h_a0d2642e1448d279d4c72995f7b39e158} 
+\#define {\bfseries MAKE\+\_\+R}~0x13
+\item 
+\Hypertarget{i8042_8h_a7327330cf4cd2aa037a35cb1d4a130e1}\label{i8042_8h_a7327330cf4cd2aa037a35cb1d4a130e1} 
+\#define {\bfseries MAKE\+\_\+S}~0x1F
+\item 
+\Hypertarget{i8042_8h_a9d8afa3b54a80c7e5bcba2eda4979d47}\label{i8042_8h_a9d8afa3b54a80c7e5bcba2eda4979d47} 
+\#define {\bfseries MAKE\+\_\+T}~0x14
+\item 
+\Hypertarget{i8042_8h_a52d4c0d6c526df559ed58cc59e45ecf0}\label{i8042_8h_a52d4c0d6c526df559ed58cc59e45ecf0} 
+\#define {\bfseries MAKE\+\_\+U}~0x16
+\item 
+\Hypertarget{i8042_8h_a1d567dccdf80fae5603dd1149f6d874b}\label{i8042_8h_a1d567dccdf80fae5603dd1149f6d874b} 
+\#define {\bfseries MAKE\+\_\+V}~0x2F
+\item 
+\Hypertarget{i8042_8h_a5287931eda665268f55498ec93276c84}\label{i8042_8h_a5287931eda665268f55498ec93276c84} 
+\#define {\bfseries MAKE\+\_\+W}~0x11
+\item 
+\Hypertarget{i8042_8h_a30c9f1029ae4e95160ea30b5b99d9de0}\label{i8042_8h_a30c9f1029ae4e95160ea30b5b99d9de0} 
+\#define {\bfseries MAKE\+\_\+X}~0x2D
+\item 
+\Hypertarget{i8042_8h_a3fdc624928cb325bc1aedeb2dd798d01}\label{i8042_8h_a3fdc624928cb325bc1aedeb2dd798d01} 
+\#define {\bfseries MAKE\+\_\+Y}~0x15
+\item 
+\Hypertarget{i8042_8h_a73cf4a8229159c5a3d6fd29f68543835}\label{i8042_8h_a73cf4a8229159c5a3d6fd29f68543835} 
+\#define {\bfseries MAKE\+\_\+Z}~0x2C
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for the i8042 keyboard and mouse controller. 
+
+This header defines useful macros and constants related to\+:
+\begin{DoxyItemize}
+\item IRQ lines
+\item KBC (Keyboard Controller) registers and status flags
+\item Mouse communication commands and bit masks
+\item Useful scancodes for keyboard events
+\end{DoxyItemize}
+
+These constants are used for handling keyboard and mouse input in Minix-\/based low-\/level programming.
+
+\begin{DoxyAuthor}{Author}
+Grupo 2leic13\+\_\+5 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/30 
+\end{DoxyDate}

@@ -1,0 +1,70 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/untitled5/batch.cpp File Reference}
+\hypertarget{batch_8cpp}{}\label{batch_8cpp}\index{/Users/luismartins/CLionProjects/untitled5/batch.cpp@{/Users/luismartins/CLionProjects/untitled5/batch.cpp}}
+{\ttfamily \#include "{}batch.\+h"{}}\newline
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+{\ttfamily \#include "{}route.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{batch_8cpp_a4a393a335e20c93f22db16c595d91bf8}{process\+Batch\+File}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const string \&input\+Path, const string \&output\+Path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{struct_location}{Location}} $>$ \mbox{\hyperlink{batch_8cpp_a0c8064fe36748c645a94c0044c15e467}{locations}}
+\begin{DoxyCompactList}\small\item\em Processes a batch file containing various routing operations. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ \mbox{\hyperlink{batch_8cpp_a3a89b0ba7c9ac669fa6c113ed63f60be}{edges}}
+\begin{DoxyCompactList}\small\item\em Stores the edges loaded from the CSV file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{batch_8cpp_a4a393a335e20c93f22db16c595d91bf8}\index{batch.cpp@{batch.cpp}!processBatchFile@{processBatchFile}}
+\index{processBatchFile@{processBatchFile}!batch.cpp@{batch.cpp}}
+\doxysubsubsection{\texorpdfstring{processBatchFile()}{processBatchFile()}}
+{\footnotesize\ttfamily \label{batch_8cpp_a4a393a335e20c93f22db16c595d91bf8} 
+void process\+Batch\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const string \&}]{input\+Path}{, }\item[{const string \&}]{output\+Path}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{batch_8cpp_a3a89b0ba7c9ac669fa6c113ed63f60be}\index{batch.cpp@{batch.cpp}!edges@{edges}}
+\index{edges@{edges}!batch.cpp@{batch.cpp}}
+\doxysubsubsection{\texorpdfstring{edges}{edges}}
+{\footnotesize\ttfamily \label{batch_8cpp_a3a89b0ba7c9ac669fa6c113ed63f60be} 
+vector$<$\mbox{\hyperlink{struct_edge}{Edge}}$>$ edges\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Stores the edges loaded from the CSV file. 
+
+Each edge represents a connection between two locations, including driving and walking time. \Hypertarget{batch_8cpp_a0c8064fe36748c645a94c0044c15e467}\index{batch.cpp@{batch.cpp}!locations@{locations}}
+\index{locations@{locations}!batch.cpp@{batch.cpp}}
+\doxysubsubsection{\texorpdfstring{locations}{locations}}
+{\footnotesize\ttfamily \label{batch_8cpp_a0c8064fe36748c645a94c0044c15e467} 
+vector$<$\mbox{\hyperlink{struct_location}{Location}}$>$ locations\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Processes a batch file containing various routing operations. 
+
+Reads a batch file and performs operations such as finding the best route, an alternative route, restricted routes, and eco-\/friendly routes. The results are written to an output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em input\+Path} & The path to the input batch file. \\
+\hline
+{\em output\+Path} & The path to the output file where results will be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n \texorpdfstring{$\ast$}{*} m), where n is the number of locations and m is the number of operations in the batch file.
+\end{DoxyNote}
+Processes a batch file containing various routing operations.
+
+Each location represents a node in the graph. 

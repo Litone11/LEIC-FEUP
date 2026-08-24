@@ -1,0 +1,36 @@
+\doxysection{/\+Users/luismartins/\+CLion\+Projects/untitled5/batch.h File Reference}
+\hypertarget{batch_8h}{}\label{batch_8h}\index{/Users/luismartins/CLionProjects/untitled5/batch.h@{/Users/luismartins/CLionProjects/untitled5/batch.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}graph.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{batch_8h_a70c9e80c9aa19a3284b671a4eb9b9474}{process\+Batch\+File}} (\mbox{\hyperlink{class_graph}{Graph}} \&\mbox{\hyperlink{main_8cpp_a700f6bbf8aedc0336a7accff8410c0df}{g}}, const std\+::string \&input\+Path, const std\+::string \&output\+Path)
+\begin{DoxyCompactList}\small\item\em Processes a batch file containing various routing operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{batch_8h_a70c9e80c9aa19a3284b671a4eb9b9474}\index{batch.h@{batch.h}!processBatchFile@{processBatchFile}}
+\index{processBatchFile@{processBatchFile}!batch.h@{batch.h}}
+\doxysubsubsection{\texorpdfstring{processBatchFile()}{processBatchFile()}}
+{\footnotesize\ttfamily \label{batch_8h_a70c9e80c9aa19a3284b671a4eb9b9474} 
+void process\+Batch\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{g}{, }\item[{const std\+::string \&}]{input\+Path}{, }\item[{const std\+::string \&}]{output\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Processes a batch file containing various routing operations. 
+
+Reads a batch file and performs operations such as finding the best route, an alternative route, restricted routes, and eco-\/friendly routes. The results are written to an output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph representing the locations and edges. \\
+\hline
+{\em input\+Path} & The path to the input batch file. \\
+\hline
+{\em output\+Path} & The path to the output file where results will be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time Complexity\+: O(n \texorpdfstring{$\ast$}{*} m), where n is the number of locations and m is the number of operations in the batch file. 
+\end{DoxyNote}
